@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>100 œuvres influentes de la littérature française — Résumés</title>
+<meta name="description" content="Guide consultable des œuvres majeures de la littérature française, avec recherche et filtres. Chaque carte ouvre une fiche dédiée (Résumé & Interprétation).">
+<style>
+  :root{ --bg:#0f1115; --card:#171923; --muted:#9aa3b2; --text:#eef1f5; --accent:#6ee7ff; --accent-2:#a78bfa; --chip:#212432; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0d0f14,#0f1115 40%);color:var(--text)}
+  header{position:sticky;top:0;backdrop-filter:saturate(1.2) blur(8px);background:linear-gradient(180deg,#0d0f14dd,#0f1115dd);z-index:100;border-bottom:1px solid #1f2330}
+  .wrap{max-width:1100px;margin:0 auto;padding:20px}
+  h1{font-size:clamp(1.4rem,3.5vw,2.2rem);margin:10px 0 6px}
+  .sub{color:var(--muted);font-size:.98rem}
+  .controls{display:grid;grid-template-columns:1.2fr .8fr .8fr .6fr;gap:12px;margin:14px 0 4px}
+  .controls input,.controls select{width:100%;padding:12px;border-radius:12px;border:1px solid #2a3040;background:#0f1220;color:var(--text);outline:none}
+  .controls input:focus,.controls select:focus{border-color:#334155;box-shadow:0 0 0 3px #33415555}
+  .count{color:var(--muted);font-size:.92rem;margin-top:6px}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));padding:14px 0 34px}
+  .card{background:linear-gradient(180deg,#151826,#111422);border:1px solid #1f2535;border-radius:18px;padding:16px 16px 14px;box-shadow:0 10px 24px rgba(0,0,0,.25);display:flex;flex-direction:column;min-height:220px}
+  .title{font-weight:700;line-height:1.25;margin:0 0 6px;font-size:1.02rem}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+  .chip{background:var(--chip);color:#c8d1e6;padding:4px 8px;border-radius:999px;font-size:12px;border:1px solid #293045}
+  .muted{color:var(--muted)}
+  .btn{display:inline-block;text-decoration:none;color:#030712;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:12px;font-weight:700;margin-top:auto;text-align:center}
+  .footer{border-top:1px solid #1f2330;color:var(--muted);font-size:.9rem;padding:22px 0 40px}
+  .badge{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid #2a3040;margin-left:8px;background:#121524}
+  .pill-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .pill{font-size:11px;color:#cbd5e1;background:#111422;border:1px solid #28304a;border-radius:999px;padding:3px 8px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Littérature française — 100 œuvres influentes</h1>
+    <div class="sub">
+      Recherche par titre, auteur, thème ou année. Filtre par époque et forme. Clique « Voir la fiche » pour ouvrir le résumé &amp; l’interprétation.
+      <span class="badge">Côté client • Sans dépendances</span>
+    </div>
+
+    <div class="controls">
+      <input id="q" placeholder="Rechercher : titre, auteur, thèmes…" />
+      <select id="era">
+        <option value="">Toutes époques</option>
+        <option>Moyen Âge & Renaissance</option>
+        <option>Classique (XVIIe)</option>
+        <option>Lumières (XVIIIe)</option>
+        <option>Romantisme</option>
+        <option>Réalisme & Naturalisme</option>
+        <option>Fin-de-siècle & Symbolisme</option>
+        <option>Modernisme & Surréalisme</option>
+        <option>Après-guerre & Existentialisme</option>
+        <option>XXe tardif & Oulipo</option>
+        <option>Contemporain & Francophone</option>
+      </select>
+      <select id="form">
+        <option value="">Toutes formes</option>
+        <option>Roman</option>
+        <option>Poésie</option>
+        <option>Théâtre</option>
+        <option>Mémoires / Essais</option>
+        <option>Philosophie</option>
+      </select>
+      <select id="sort">
+        <option value="alpha">Trier : A → Z</option>
+        <option value="yearAsc">Trier : Ancien → Récent</option>
+        <option value="yearDesc">Trier : Récent → Ancien</option>
+      </select>
+    </div>
+    <div class="count"><span id="counter">Chargement…</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="grid" class="grid" aria-live="polite"></div>
+</main>
+
+<footer class="wrap footer">
+  Conçu pour la consultation rapide. Tu peux éditer/étendre le bloc de données ci-dessous. Astuce : héberge sur GitHub Pages / Netlify.
+  <div class="pill-bar">
+    <span class="pill">Raccourci : / pour la recherche</span>
+    <span class="pill">Filtres cumulables</span>
+    <span class="pill">Fiches dédiées par œuvre</span>
+  </div>
+  <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Haut de page</a>
+</footer>
+
+<script>
+/* ==========================================================
+   DONNÉES : œuvres (titre, auteur, année, époque, forme, thèmes)
+   NB : étiquettes FR + francophonie incluse.
+   ========================================================== */
+const WORKS = [
+  // Moyen Âge & Renaissance
+  {title:"La Chanson de Roland", author:"Anonyme", year:1100, era:"Moyen Âge & Renaissance", form:"Poésie", themes:["héroïsme","loyauté","croisade"]},
+  {title:"Le Roman de la Rose", author:"Guillaume de Lorris & Jean de Meun", year:1275, era:"Moyen Âge & Renaissance", form:"Poésie", themes:["allégorie","amour courtois","débat"]},
+  {title:"Gargantua et Pantagruel", author:"François Rabelais", year:1534, era:"Moyen Âge & Renaissance", form:"Roman", themes:["satire","éducation","humanisme"]},
+  {title:"Essais", author:"Montaigne", year:1580, era:"Moyen Âge & Renaissance", form:"Mémoires / Essais", themes:["soi","scepticisme","tolérance"]},
+
+  // Classique (XVIIe)
+  {title:"Le Cid", author:"Pierre Corneille", year:1637, era:"Classique (XVIIe)", form:"Théâtre", themes:["honneur","amour","devoir"]},
+  {title:"Phèdre", author:"Jean Racine", year:1677, era:"Classique (XVIIe)", form:"Théâtre", themes:["désir","fatalité","culpabilité"]},
+  {title:"Tartuffe", author:"Molière", year:1664, era:"Classique (XVIIe)", form:"Théâtre", themes:["hypocrisie","religion","autorité"]},
+  {title:"Le Misanthrope", author:"Molière", year:1666, era:"Classique (XVIIe)", form:"Théâtre", themes:["sincérité","société","mœurs"]},
+  {title:"La Princesse de Clèves", author:"Madame de La Fayette", year:1678, era:"Classique (XVIIe)", form:"Roman", themes:["passion","vertu","cour"]},
+  {title:"Pensées", author:"Blaise Pascal", year:1670, era:"Classique (XVIIe)", form:"Philosophie", themes:["foi","raison","condition humaine"]},
+
+  // Lumières (XVIIIe)
+  {title:"Candide", author:"Voltaire", year:1759, era:"Lumières (XVIIIe)", form:"Roman", themes:["optimisme","satire","guerre"]},
+  {title:"Les Liaisons dangereuses", author:"Choderlos de Laclos", year:1782, era:"Lumières (XVIIIe)", form:"Roman", themes:["manipulation","éros","pouvoir"]},
+  {title:"Confessions", author:"Jean-Jacques Rousseau", year:1782, era:"Lumières (XVIIIe)", form:"Mémoires / Essais", themes:["soi","sensibilité","vérité"]},
+  {title:"Julie ou La Nouvelle Héloïse", author:"Jean-Jacques Rousseau", year:1761, era:"Lumières (XVIIIe)", form:"Roman", themes:["sentiment","vertu","nature"]},
+  {title:"Lettres philosophiques", author:"Voltaire", year:1734, era:"Lumières (XVIIIe)", form:"Mémoires / Essais", themes:["tolérance","science","liberté"]},
+  {title:"Les 120 Journées de Sodome", author:"Marquis de Sade", year:1785, era:"Lumières (XVIIIe)", form:"Roman", themes:["transgression","pouvoir","corps"]},
+  {title:"Justine", author:"Marquis de Sade", year:1791, era:"Lumières (XVIIIe)", form:"Roman", themes:["vertu","violence","hasard"]},
+
+  // Romantisme
+  {title:"René", author:"Chateaubriand", year:1802, era:"Romantisme", form:"Roman", themes:["mélancolie","exil","moi"]},
+  {title:"Hernani", author:"Victor Hugo", year:1830, era:"Romantisme", form:"Théâtre", themes:["rébellion","passion","formes"]},
+  {title:"Notre-Dame de Paris", author:"Victor Hugo", year:1831, era:"Romantisme", form:"Roman", themes:["architecture","destin","marginaux"]},
+  {title:"Les Misérables", author:"Victor Hugo", year:1862, era:"Romantisme", form:"Roman", themes:["justice","rédemption","pauvreté"]},
+  {title:"Indiana", author:"George Sand", year:1832, era:"Romantisme", form:"Roman", themes:["mariage","liberté","empire"]},
+  {title:"La Mare au diable", author:"George Sand", year:1846, era:"Romantisme", form:"Roman", themes:["ruralité","pastoral","vertu"]},
+
+  // Réalisme & Naturalisme
+  {title:"Le Rouge et le Noir", author:"Stendhal", year:1830, era:"Réalisme & Naturalisme", form:"Roman", themes:["ambition","classe","psychologie"]},
+  {title:"La Chartreuse de Parme", author:"Stendhal", year:1839, era:"Réalisme & Naturalisme", form:"Roman", themes:["amour","politique","hasard"]},
+  {title:"Le Père Goriot", author:"Honoré de Balzac", year:1835, era:"Réalisme & Naturalisme", form:"Roman", themes:["capital","famille","Paris"]},
+  {title:"Eugénie Grandet", author:"Honoré de Balzac", year:1833, era:"Réalisme & Naturalisme", form:"Roman", themes:["avarice","patriarcat","province"]},
+  {title:"Madame Bovary", author:"Gustave Flaubert", year:1857, era:"Réalisme & Naturalisme", form:"Roman", themes:["désir","consommation","ennui"]},
+  {title:"L’Éducation sentimentale", author:"Gustave Flaubert", year:1869, era:"Réalisme & Naturalisme", form:"Roman", themes:["illusion","histoire","jeunesse"]},
+  {title:"Thérèse Raquin", author:"Émile Zola", year:1867, era:"Réalisme & Naturalisme", form:"Roman", themes:["culpabilité","déterminisme","crime"]},
+  {title:"Germinal", author:"Émile Zola", year:1885, era:"Réalisme & Naturalisme", form:"Roman", themes:["travail","lutte des classes","industrie"]},
+  {title:"Nana", author:"Émile Zola", year:1880, era:"Réalisme & Naturalisme", form:"Roman", themes:["désir","décadence","spectacle"]},
+  {title:"Bel-Ami", author:"Guy de Maupassant", year:1885, era:"Réalisme & Naturalisme", form:"Roman", themes:["presse","sexe","opportunisme"]},
+  {title:"Pierre et Jean", author:"Guy de Maupassant", year:1888, era:"Réalisme & Naturalisme", form:"Roman", themes:["famille","légitimité","identité"]},
+  {title:"Vingt mille lieues sous les mers", author:"Jules Verne", year:1870, era:"Réalisme & Naturalisme", form:"Roman", themes:["science","exploration","liberté"]},
+  {title:"Le Tour du monde en 80 jours", author:"Jules Verne", year:1872, era:"Réalisme & Naturalisme", form:"Roman", themes:["temps","voyage","pari"]},
+
+  // Fin-de-siècle & Symbolisme
+  {title:"Les Fleurs du mal", author:"Charles Baudelaire", year:1857, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["modernité","spleen","beauté"]},
+  {title:"Illuminations", author:"Arthur Rimbaud", year:1875, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["vision","langage","rupture"]},
+  {title:"Une Saison en enfer", author:"Arthur Rimbaud", year:1873, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["soi","révolte","alchimie"]},
+  {title:"Poésies", author:"Stéphane Mallarmé", year:1899, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["langage","absence","musique"]},
+  {title:"Cyrano de Bergerac", author:"Edmond Rostand", year:1897, era:"Fin-de-siècle & Symbolisme", form:"Théâtre", themes:["esprit","panache","amour"]},
+  {title:"Alcools", author:"Guillaume Apollinaire", year:1913, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["modernité","montage","amour"]},
+
+  // Modernisme & Surréalisme
+  {title:"À la recherche du temps perdu", author:"Marcel Proust", year:1913, era:"Modernisme & Surréalisme", form:"Roman", themes:["mémoire","temps","art"]},
+  {title:"Nadja", author:"André Breton", year:1928, era:"Modernisme & Surréalisme", form:"Roman", themes:["désir","hasard","Paris"]},
+  {title:"Le Paysan de Paris", author:"Louis Aragon", year:1926, era:"Modernisme & Surréalisme", form:"Roman", themes:["ville","rêve","réel"]},
+  {title:"Voyage au bout de la nuit", author:"Louis-Ferdinand Céline", year:1932, era:"Modernisme & Surréalisme", form:"Roman", themes:["guerre","colonialisme","nihilisme"]},
+
+  // Après-guerre & Existentialisme
+  {title:"La Nausée", author:"Jean-Paul Sartre", year:1938, era:"Après-guerre & Existentialisme", form:"Roman", themes:["existence","absurde","liberté"]},
+  {title:"Huis clos", author:"Jean-Paul Sartre", year:1944, era:"Après-guerre & Existentialisme", form:"Théâtre", themes:["soi","regard","enfer"]},
+  {title:"L’Étranger", author:"Albert Camus", year:1942, era:"Après-guerre & Existentialisme", form:"Roman", themes:["absurde","alienation","Algérie"]},
+  {title:"La Peste", author:"Albert Camus", year:1947, era:"Après-guerre & Existentialisme", form:"Roman", themes:["solidarité","mal","épidémie"]},
+  {title:"La Chute", author:"Albert Camus", year:1956, era:"Après-guerre & Existentialisme", form:"Roman", themes:["culpabilité","jugement","confession"]},
+  {title:"Le Deuxième Sexe", author:"Simone de Beauvoir", year:1949, era:"Après-guerre & Existentialisme", form:"Philosophie", themes:["genre","liberté","construction"]},
+  {title:"Les Mandarins", author:"Simone de Beauvoir", year:1954, era:"Après-guerre & Existentialisme", form:"Roman", themes:["politique","éthique","Paris"]},
+  {title:"En attendant Godot", author:"Samuel Beckett", year:1953, era:"Après-guerre & Existentialisme", form:"Théâtre", themes:["attente","absurde","temps"]},
+  {title:"Rhinocéros", author:"Eugène Ionesco", year:1959, era:"Après-guerre & Existentialisme", form:"Théâtre", themes:["conformisme","métamorphose","totalitarisme"]},
+  {title:"La Cantatrice chauve", author:"Eugène Ionesco", year:1950, era:"Après-guerre & Existentialisme", form:"Théâtre", themes:["langage","banalité","nonsense"]},
+  {title:"Les Mots", author:"Jean-Paul Sartre", year:1964, era:"Après-guerre & Existentialisme", form:"Mémoires / Essais", themes:["auto-invention","littérature"]},
+  {title:"L’Être et le Néant", author:"Jean-Paul Sartre", year:1943, era:"Après-guerre & Existentialisme", form:"Philosophie", themes:["liberté","mauvaise foi","soi"]},
+
+  // XXe tardif & Oulipo
+  {title:"La Disparition", author:"Georges Perec", year:1969, era:"XXe tardif & Oulipo", form:"Roman", themes:["contrainte","absence","langue"]},
+  {title:"La Vie mode d’emploi", author:"Georges Perec", year:1978, era:"XXe tardif & Oulipo", form:"Roman", themes:["puzzle","mémoire","immeuble"]},
+  {title:"Zazie dans le métro", author:"Raymond Queneau", year:1959, era:"XXe tardif & Oulipo", form:"Roman", themes:["argot","jeu","ville"]},
+  {title:"La Jalousie", author:"Alain Robbe-Grillet", year:1957, era:"XXe tardif & Oulipo", form:"Roman", themes:["perception","forme","répétition"]},
+  {title:"Histoire", author:"Claude Simon", year:1967, era:"XXe tardif & Oulipo", form:"Roman", themes:["guerre","mémoire","montage"]},
+  {title:"La Condition postmoderne", author:"Jean-François Lyotard", year:1979, era:"XXe tardif & Oulipo", form:"Philosophie", themes:["récit","savoir","incrédulité"]},
+  {title:"Hiroshima mon amour", author:"Marguerite Duras", year:1960, era:"XXe tardif & Oulipo", form:"Théâtre", themes:["mémoire","guerre","amour"]},
+  {title:"Moderato cantabile", author:"Marguerite Duras", year:1958, era:"XXe tardif & Oulipo", form:"Roman", themes:["désir","forme","silence"]},
+  {title:"L’Amant", author:"Marguerite Duras", year:1984, era:"XXe tardif & Oulipo", form:"Roman", themes:["Indochine","sexualité","mémoire"]},
+
+  // Contemporain & Francophone
+  {title:"Le Petit Prince", author:"Antoine de Saint-Exupéry", year:1943, era:"Contemporain & Francophone", form:"Roman", themes:["enfance","imaginaire","perte"]},
+  {title:"Vol de nuit", author:"Antoine de Saint-Exupéry", year:1931, era:"Contemporain & Francophone", form:"Roman", themes:["risque","devoir","technique"]},
+  {title:"La Civilisation, ma mère !", author:"Driss Chraïbi", year:1972, era:"Contemporain & Francophone", form:"Roman", themes:["modernité","Maroc","famille"]},
+  {title:"L’Amour, la fantasia", author:"Assia Djebar", year:1985, era:"Contemporain & Francophone", form:"Roman", themes:["histoire","voix","Algérie"]},
+  {title:"Cahier d’un retour au pays natal", author:"Aimé Césaire", year:1939, era:"Contemporain & Francophone", form:"Poésie", themes:["Négritude","exil","renaissance"]},
+  {title:"Le Devoir de violence", author:"Yambo Ouologuem", year:1968, era:"Contemporain & Francophone", form:"Roman", themes:["pouvoir","violence","histoire"]},
+  {title:"La Nuit des temps", author:"René Barjavel", year:1968, era:"Contemporain & Francophone", form:"Roman", themes:["SF","amour","apocalypse"]},
+  {title:"La Possibilité d’une île", author:"Michel Houellebecq", year:2005, era:"Contemporain & Francophone", form:"Roman", themes:["isolement","biotech","satire"]},
+  {title:"Les Particules élémentaires", author:"Michel Houellebecq", year:1998, era:"Contemporain & Francophone", form:"Roman", themes:["sexe","science","nihilisme"]},
+  {title:"L’Élégance du hérisson", author:"Muriel Barbery", year:2006, era:"Contemporain & Francophone", form:"Roman", themes:["classe","esthétique","amitié"]},
+  {title:"Bonjour tristesse", author:"Françoise Sagan", year:1954, era:"Contemporain & Francophone", form:"Roman", themes:["jeunesse","désir","ennui"]},
+  {title:"Gigi", author:"Colette", year:1944, era:"Contemporain & Francophone", form:"Roman", themes:["apprentissage","désir","indépendance"]},
+  {title:"Chéri", author:"Colette", year:1920, era:"Contemporain & Francophone", form:"Roman", themes:["âge","éros","Paris"]},
+  {title:"Claudine à l’école", author:"Colette", year:1900, era:"Contemporain & Francophone", form:"Roman", themes:["école","identité","provocation"]},
+  {title:"Le Rivage des Syrtes", author:"Julien Gracq", year:1951, era:"Contemporain & Francophone", form:"Roman", themes:["attente","mythe","frontière"]},
+  {title:"La Place", author:"Annie Ernaux", year:1983, era:"Contemporain & Francophone", form:"Mémoires / Essais", themes:["classe","père","distance"]},
+  {title:"Les Années", author:"Annie Ernaux", year:2008, era:"Contemporain & Francophone", form:"Mémoires / Essais", themes:["mémoire collective","soi","temps"]},
+  {title:"Texaco", author:"Patrick Chamoiseau", year:1992, era:"Contemporain & Francophone", form:"Roman", themes:["créole","histoire","urbain"]},
+  {title:"Désert", author:"J.-M. G. Le Clézio", year:1980, era:"Contemporain & Francophone", form:"Roman", themes:["migration","désert","identité"]},
+
+
+
+
+
+
+
+
+
+
+
+{title:"Manon Lescaut", author:"Abbé Prévost", year:1731, era:"Lumières (XVIIIe)", form:"Roman", themes:["passion","destin","moralité"]},
+{title:"Paul et Virginie", author:"Bernardin de Saint-Pierre", year:1788, era:"Lumières (XVIIIe)", form:"Roman", themes:["innocence","nature","tragédie"]},
+{title:"Les Chouans", author:"Honoré de Balzac", year:1829, era:"Réalisme & Naturalisme", form:"Roman", themes:["guerre civile","royalisme","province"]},
+{title:"La Cousine Bette", author:"Honoré de Balzac", year:1846, era:"Réalisme & Naturalisme", form:"Roman", themes:["vengeance","famille","Paris"]},
+{title:"Poésies", author:"Paul Verlaine", year:1884, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["musicalité","mélancolie","impression"]},
+{title:"Les Nourritures terrestres", author:"André Gide", year:1897, era:"Fin-de-siècle & Symbolisme", form:"Mémoires / Essais", themes:["désir","liberté","hédonisme"]},
+{title:"Le Grand Meaulnes", author:"Alain-Fournier", year:1913, era:"Modernisme & Surréalisme", form:"Roman", themes:["adolescence","mystère","nostalgie"]},
+{title:"Calligrammes", author:"Guillaume Apollinaire", year:1918, era:"Modernisme & Surréalisme", form:"Poésie", themes:["typographie","guerre","modernité"]},
+{title:"Le Silence de la mer", author:"Vercors", year:1942, era:"Après-guerre & Existentialisme", form:"Roman", themes:["résistance","dignité","occupation"]},
+{title:"Meursault, contre-enquête", author:"Kamel Daoud", year:2013, era:"Contemporain & Francophone", form:"Roman", themes:["réécriture","Algérie","voix"]},
+{title:"Soumission", author:"Michel Houellebecq", year:2015, era:"Contemporain & Francophone", form:"Roman", themes:["politique","identité","satire"]},
+{title:"La Carte et le territoire", author:"Michel Houellebecq", year:2010, era:"Contemporain & Francophone", form:"Roman", themes:["art","travail","célébrité"]},
+{title:"Petit pays", author:"Gaël Faye", year:2016, era:"Contemporain & Francophone", form:"Roman", themes:["enfance","exil","guerre civile"]},
+{title:"Le Lambeau", author:"Philippe Lançon", year:2018, era:"Contemporain & Francophone", form:"Mémoires / Essais", themes:["trauma","résilience","journalisme"]}
+
+
+];
+
+/* ===== Rendu & interactions ===== */
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const era = document.getElementById('era');
+const form = document.getElementById('form');
+const sortSel = document.getElementById('sort');
+const counter = document.getElementById('counter');
+
+const slugify = s => (s||"")
+  .toString().toLowerCase()
+  .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+  .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+
+function render(list){
+  grid.innerHTML = '';
+  list.forEach(w=>{
+    const el = document.createElement('article');
+    el.className = 'card';
+    const yearLabel = w.year ? ` (${w.year})` : '';
+    const slug = slugify(`${w.title}-${w.author}-${w.year||''}`);
+    el.innerHTML = `
+      <h3 class="title">${w.title}${yearLabel}</h3>
+      <div class="meta">
+        <span class="chip">${w.author}</span>
+        <span class="chip">${w.era}</span>
+        <span class="chip">${w.form}</span>
+      </div>
+      <p class="muted">${(w.themes||[]).slice(0,5).join(" · ")}</p>
+      <a class="btn" href="fiche.html?slug=${encodeURIComponent(slug)}">Voir la fiche</a>
+    `;
+    grid.appendChild(el);
+  });
+  counter.textContent = `${list.length} œuvre${list.length!==1?'s':''} affichée${list.length!==1?'s':''}`;
+}
+
+function normalize(s){ return (s||"").toString().toLowerCase(); }
+
+function applyFilters(){
+  const term = normalize(q.value);
+  let list = WORKS.filter(w=>{
+    const hay = normalize([w.title,w.author,w.era,w.form,(w.themes||[]).join(' ')].join(' '));
+    const termOk = !term || hay.includes(term);
+    const eraOk = !era.value || w.era===era.value;
+    const formOk = !form.value || w.form===form.value;
+    return termOk && eraOk && formOk;
+  });
+
+  const mode = sortSel.value;
+  list.sort((a,b)=>{
+    if(mode==='alpha') return a.title.localeCompare(b.title);
+    if(mode==='yearAsc') return (a.year||0) - (b.year||0);
+    if(mode==='yearDesc') return (b.year||0) - (a.year||0);
+    return 0;
+  });
+
+  render(list);
+}
+
+[q, era, form, sortSel].forEach(el => el.addEventListener('input', applyFilters));
+document.addEventListener('keydown', e=>{ if(e.key==='/'){ e.preventDefault(); q.focus(); }});
+
+render(WORKS);
+</script>
+</body>
+</html>

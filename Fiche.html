@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fiche œuvre — Résumé & Interprétation</title>
+<meta name="description" content="Fiche détaillée d’une œuvre de la littérature française : résumé et interprétation.">
+<style>
+  :root{ --bg:#0f1115; --card:#171923; --muted:#9aa3b2; --text:#eef1f5; --accent:#6ee7ff; --accent-2:#a78bfa; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0d0f14,#0f1115 40%);color:var(--text)}
+  .wrap{max-width:900px;margin:0 auto;padding:22px}
+  a.btn{display:inline-block;text-decoration:none;color:#030712;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:12px;font-weight:700}
+  .head{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap;margin-bottom:16px}
+  h1{margin:0 0 6px}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 0}
+  .chip{background:#111422;color:#c8d1e6;padding:4px 8px;border-radius:999px;border:1px solid #28304a;font-size:12px}
+  .card{background:linear-gradient(180deg,#151826,#111422);border:1px solid #1f2535;border-radius:18px;padding:18px;margin:14px 0}
+  .muted{color:var(--muted)}
+  .small{font-size:.92rem}
+  footer{color:var(--muted);font-size:.9rem;margin:24px 0 32px;border-top:1px solid #1f2330;padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <a class="btn" href="index.html">← Retour</a>
+      <h1 id="title">Titre</h1>
+      <div class="meta">
+        <span class="chip" id="author">Auteur</span>
+        <span class="chip" id="year">Année</span>
+        <span class="chip" id="era">Époque</span>
+        <span class="chip" id="form">Forme</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="card">
+    <h2>Résumé</h2>
+    <p class="small muted">👉 Tu peux remplacer ce texte par ton propre résumé détaillé.</p>
+    <div id="resume" style="margin-top:8px;line-height:1.6">
+      <!-- TODO: Ton résumé ici -->
+      <p>Résumé à compléter…</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Interprétation</h2>
+    <p class="small muted">👉 Ajoute ici ton analyse : thèmes, symboles, contexte, réception, comparaisons.</p>
+    <div id="interpretation" style="margin-top:8px;line-height:1.6">
+      <!-- TODO: Ton interprétation ici -->
+      <p>Interprétation à compléter…</p>
+    </div>
+  </section>
+
+  <footer>
+    Conseil : garde une structure réutilisable (Contexte → Thèmes → Style → Réception → Pistes de lecture).
+  </footer>
+</div>
+
+<script>
+/* Même dataset minimal pour résoudre la fiche à partir du slug.
+   Tu peux le déplacer dans un .js partagé si tu préfères. */
+const WORKS = [
+
+
+{title:"Manon Lescaut", author:"Abbé Prévost", year:1731, era:"Lumières (XVIIIe)", form:"Roman", themes:["passion","destin","moralité"]},
+{title:"Paul et Virginie", author:"Bernardin de Saint-Pierre", year:1788, era:"Lumières (XVIIIe)", form:"Roman", themes:["innocence","nature","tragédie"]},
+{title:"Les Chouans", author:"Honoré de Balzac", year:1829, era:"Réalisme & Naturalisme", form:"Roman", themes:["guerre civile","royalisme","province"]},
+{title:"La Cousine Bette", author:"Honoré de Balzac", year:1846, era:"Réalisme & Naturalisme", form:"Roman", themes:["vengeance","famille","Paris"]},
+{title:"Poésies", author:"Paul Verlaine", year:1884, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["musicalité","mélancolie","impression"]},
+{title:"Les Nourritures terrestres", author:"André Gide", year:1897, era:"Fin-de-siècle & Symbolisme", form:"Mémoires / Essais", themes:["désir","liberté","hédonisme"]},
+{title:"Le Grand Meaulnes", author:"Alain-Fournier", year:1913, era:"Modernisme & Surréalisme", form:"Roman", themes:["adolescence","mystère","nostalgie"]},
+{title:"Calligrammes", author:"Guillaume Apollinaire", year:1918, era:"Modernisme & Surréalisme", form:"Poésie", themes:["typographie","guerre","modernité"]},
+{title:"Le Silence de la mer", author:"Vercors", year:1942, era:"Après-guerre & Existentialisme", form:"Roman", themes:["résistance","dignité","occupation"]},
+{title:"Meursault, contre-enquête", author:"Kamel Daoud", year:2013, era:"Contemporain & Francophone", form:"Roman", themes:["réécriture","Algérie","voix"]},
+{title:"Soumission", author:"Michel Houellebecq", year:2015, era:"Contemporain & Francophone", form:"Roman", themes:["politique","identité","satire"]},
+{title:"La Carte et le territoire", author:"Michel Houellebecq", year:2010, era:"Contemporain & Francophone", form:"Roman", themes:["art","travail","célébrité"]},
+{title:"Petit pays", author:"Gaël Faye", year:2016, era:"Contemporain & Francophone", form:"Roman", themes:["enfance","exil","guerre civile"]},
+{title:"Le Lambeau", author:"Philippe Lançon", year:2018, era:"Contemporain & Francophone", form:"Mémoires / Essais", themes:["trauma","résilience","journalisme"]},
+
+
+
+
+  {title:"La Chanson de Roland", author:"Anonyme", year:1100, era:"Moyen Âge & Renaissance", form:"Poésie"},
+  {title:"Le Roman de la Rose", author:"Guillaume de Lorris & Jean de Meun", year:1275, era:"Moyen Âge & Renaissance", form:"Poésie"},
+  {title:"Gargantua et Pantagruel", author:"François Rabelais", year:1534, era:"Moyen Âge & Renaissance", form:"Roman"},
+  {title:"Essais", author:"Montaigne", year:1580, era:"Moyen Âge & Renaissance", form:"Mémoires / Essais"},
+  {title:"Le Cid", author:"Pierre Corneille", year:1637, era:"Classique (XVIIe)", form:"Théâtre"},
+  {title:"Phèdre", author:"Jean Racine", year:1677, era:"Classique (XVIIe)", form:"Théâtre"},
+  {title:"Tartuffe", author:"Molière", year:1664, era:"Classique (XVIIe)", form:"Théâtre"},
+  {title:"Le Misanthrope", author:"Molière", year:1666, era:"Classique (XVIIe)", form:"Théâtre"},
+  {title:"La Princesse de Clèves", author:"Madame de La Fayette", year:1678, era:"Classique (XVIIe)", form:"Roman"},
+  {title:"Pensées", author:"Blaise Pascal", year:1670, era:"Classique (XVIIe)", form:"Philosophie"},
+  {title:"Candide", author:"Voltaire", year:1759, era:"Lumières (XVIIIe)", form:"Roman"},
+  {title:"Les Liaisons dangereuses", author:"Choderlos de Laclos", year:1782, era:"Lumières (XVIIIe)", form:"Roman"},
+  {title:"Confessions", author:"Jean-Jacques Rousseau", year:1782, era:"Lumières (XVIIIe)", form:"Mémoires / Essais"},
+  {title:"Julie ou La Nouvelle Héloïse", author:"Jean-Jacques Rousseau", year:1761, era:"Lumières (XVIIIe)", form:"Roman"},
+  {title:"Lettres philosophiques", author:"Voltaire", year:1734, era:"Lumières (XVIIIe)", form:"Mémoires / Essais"},
+  {title:"Les 120 Journées de Sodome", author:"Marquis de Sade", year:1785, era:"Lumières (XVIIIe)", form:"Roman"},
+  {title:"Justine", author:"Marquis de Sade", year:1791, era:"Lumières (XVIIIe)", form:"Roman"},
+  {title:"René", author:"Chateaubriand", year:1802, era:"Romantisme", form:"Roman"},
+
+
+
+{
+  title: "Hernani",
+  author: "Victor Hugo",
+  year: 1830,
+  era: "Romantisme",
+  form: "Théâtre",
+  resume: `
+    <p><em>Hernani</em> est un drame romantique en cinq actes, écrit par Victor Hugo et joué pour la première fois en 1830 à la Comédie-Française. L’action se déroule dans l’Espagne du XVIᵉ siècle, sous le règne de Charles Quint. Doña Sol, jeune femme noble, est promise à son vieil oncle, Don Ruy Gomez de Silva, mais elle aime en secret Hernani, un proscrit vivant dans les montagnes, chef de bande et rebelle traqué. Le roi, Don Carlos, convoite lui aussi la jeune femme et tente de la séduire. </p>
+    <p>Au fil des actes, le destin des trois hommes s’entrecroise autour de Doña Sol, symbole de pureté et d’amour absolu. Don Carlos, d’abord libertin, devient empereur et pardonne à ses rivaux lors de son couronnement à Aix-la-Chapelle. Hernani, apprenant sa véritable noblesse, accepte de renoncer à la vengeance et obtient la main de Doña Sol. Mais la fatalité frappe : il avait juré à Don Ruy Gomez de se donner la mort si celui-ci sonnait son cor. Le soir des noces, le vieil homme rappelle la promesse. Hernani boit le poison, suivi par Doña Sol, tandis que Don Ruy meurt de remords. L’amour, impuissant face à l’honneur et au devoir, se consume dans la mort.</p>
+  `,
+  interpretation: `
+    <p><em>Hernani</em> est avant tout un manifeste du romantisme. Par cette œuvre, Victor Hugo s’élève contre les règles rigides du théâtre classique — les unités de lieu, de temps et d’action — pour défendre une liberté artistique totale. Le drame mêle les registres tragique et comique, sublime et grotesque, afin de peindre la vie dans toute sa diversité. La “bataille d’Hernani”, qui opposa violemment partisans du romantisme et défenseurs du classicisme lors de la première représentation, marque un tournant majeur de l’histoire littéraire française.</p>
+    <p>Sur le plan symbolique, Hernani incarne la jeunesse insurgée et l’idéal de liberté face à un monde gouverné par les codes de l’honneur et les contraintes sociales. Don Ruy Gomez représente le passé figé, la noblesse d’Ancien Régime, tandis que Don Carlos illustre le pouvoir politique capable de se transformer : de séducteur impétueux, il devient empereur éclairé. Le thème de la fatalité romantique traverse toute la pièce : l’amour est pur mais condamné, la passion s’achève dans la mort, et la grandeur morale réside dans le sacrifice. À travers ce triangle amoureux, Hugo célèbre à la fois la puissance du sentiment, la révolte de l’individu et la naissance d’un art libéré des carcans classiques.</p>
+  `
+},
+
+
+
+  {title:"Notre-Dame de Paris", author:"Victor Hugo", year:1831, era:"Romantisme", form:"Roman"},
+  {title:"Les Misérables", author:"Victor Hugo", year:1862, era:"Romantisme", form:"Roman"},
+  {title:"Indiana", author:"George Sand", year:1832, era:"Romantisme", form:"Roman"},
+  {title:"La Mare au diable", author:"George Sand", year:1846, era:"Romantisme", form:"Roman"},
+  {title:"Le Rouge et le Noir", author:"Stendhal", year:1830, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"La Chartreuse de Parme", author:"Stendhal", year:1839, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Le Père Goriot", author:"Honoré de Balzac", year:1835, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Eugénie Grandet", author:"Honoré de Balzac", year:1833, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Madame Bovary", author:"Gustave Flaubert", year:1857, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"L’Éducation sentimentale", author:"Gustave Flaubert", year:1869, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Thérèse Raquin", author:"Émile Zola", year:1867, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Germinal", author:"Émile Zola", year:1885, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Nana", author:"Émile Zola", year:1880, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Bel-Ami", author:"Guy de Maupassant", year:1885, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Pierre et Jean", author:"Guy de Maupassant", year:1888, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Vingt mille lieues sous les mers", author:"Jules Verne", year:1870, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Le Tour du monde en 80 jours", author:"Jules Verne", year:1872, era:"Réalisme & Naturalisme", form:"Roman"},
+  {title:"Les Fleurs du mal", author:"Charles Baudelaire", year:1857, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
+  {title:"Illuminations", author:"Arthur Rimbaud", year:1875, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
+  {title:"Une Saison en enfer", author:"Arthur Rimbaud", year:1873, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
+  {title:"Poésies", author:"Stéphane Mallarmé", year:1899, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
+  {title:"Cyrano de Bergerac", author:"Edmond Rostand", year:1897, era:"Fin-de-siècle & Symbolisme", form:"Théâtre"},
+  {title:"Alcools", author:"Guillaume Apollinaire", year:1913, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
+  {title:"À la recherche du temps perdu", author:"Marcel Proust", year:1913, era:"Modernisme & Surréalisme", form:"Roman"},
+  {title:"Nadja", author:"André Breton", year:1928, era:"Modernisme & Surréalisme", form:"Roman"},
+  {title:"Le Paysan de Paris", author:"Louis Aragon", year:1926, era:"Modernisme & Surréalisme", form:"Roman"},
+  {title:"Voyage au bout de la nuit", author:"Louis-Ferdinand Céline", year:1932, era:"Modernisme & Surréalisme", form:"Roman"},
+  {title:"La Nausée", author:"Jean-Paul Sartre", year:1938, era:"Après-guerre & Existentialisme", form:"Roman"},
+  {title:"Huis clos", author:"Jean-Paul Sartre", year:1944, era:"Après-guerre & Existentialisme", form:"Théâtre"},
+  {title:"L’Étranger", author:"Albert Camus", year:1942, era:"Après-guerre & Existentialisme", form:"Roman"},
+  {title:"La Peste", author:"Albert Camus", year:1947, era:"Après-guerre & Existentialisme", form:"Roman"},
+  {title:"La Chute", author:"Albert Camus", year:1956, era:"Après-guerre & Existentialisme", form:"Roman"},
+  {title:"Le Deuxième Sexe", author:"Simone de Beauvoir", year:1949, era:"Après-guerre & Existentialisme", form:"Philosophie"},
+  {title:"Les Mandarins", author:"Simone de Beauvoir", year:1954, era:"Après-guerre & Existentialisme", form:"Roman"},
+  {title:"En attendant Godot", author:"Samuel Beckett", year:1953, era:"Après-guerre & Existentialisme", form:"Théâtre"},
+  {title:"Rhinocéros", author:"Eugène Ionesco", year:1959, era:"Après-guerre & Existentialisme", form:"Théâtre"},
+  {title:"La Cantatrice chauve", author:"Eugène Ionesco", year:1950, era:"Après-guerre & Existentialisme", form:"Théâtre"},
+  {title:"Les Mots", author:"Jean-Paul Sartre", year:1964, era:"Après-guerre & Existentialisme", form:"Mémoires / Essais"},
+  {title:"L’Être et le Néant", author:"Jean-Paul Sartre", year:1943, era:"Après-guerre & Existentialisme", form:"Philosophie"},
+  {title:"La Disparition", author:"Georges Perec", year:1969, era:"XXe tardif & Oulipo", form:"Roman"},
+  {title:"La Vie mode d’emploi", author:"Georges Perec", year:1978, era:"XXe tardif & Oulipo", form:"Roman"},
+  {title:"Zazie dans le métro", author:"Raymond Queneau", year:1959, era:"XXe tardif & Oulipo", form:"Roman"},
+  {title:"La Jalousie", author:"Alain Robbe-Grillet", year:1957, era:"XXe tardif & Oulipo", form:"Roman"},
+  {title:"Histoire", author:"Claude Simon", year:1967, era:"XXe tardif & Oulipo", form:"Roman"},
+  {title:"La Condition postmoderne", author:"Jean-François Lyotard", year:1979, era:"XXe tardif & Oulipo", form:"Philosophie"},
+  {title:"Hiroshima mon amour", author:"Marguerite Duras", year:1960, era:"XXe tardif & Oulipo", form:"Théâtre"},
+  {title:"Moderato cantabile", author:"Marguerite Duras", year:1958, era:"XXe tardif & Oulipo", form:"Roman"},
+  {title:"L’Amant", author:"Marguerite Duras", year:1984, era:"XXe tardif & Oulipo", form:"Roman"},
+
+
+{
+  title: "Le Petit Prince",
+  author: "Antoine de Saint-Exupéry",
+  year: 1943,
+  era: "Contemporain & Francophone",
+  form: "Roman / Conte philosophique",
+  resume: `
+    <p><em>Le Petit Prince</em> raconte la rencontre, dans le désert du Sahara, entre un aviateur tombé en panne et un étrange petit garçon venu d’un autre astéroïde. Celui-ci lui confie peu à peu son histoire : sur sa planète B 612, il vivait seul, prenant soin d’une rose capricieuse qu’il aimait profondément. Un jour, blessé par l’orgueil de la fleur, il décide de partir pour un voyage à travers l’univers, à la recherche d’amis et de sens.</p>
+    <p>Au fil de ses étapes, le petit prince visite plusieurs planètes habitées chacune par un adulte caricatural : un roi autoritaire, un vaniteux, un buveur, un homme d’affaires, un allumeur de réverbères et un géographe. Chacun incarne un travers de la société humaine — pouvoir, vanité, dépendance, possession, routine ou savoir inutile. Enfin, le petit prince arrive sur la Terre, où il découvre la multiplicité des roses et rencontre un renard qui lui enseigne l’essentiel : « On ne voit bien qu’avec le cœur. L’essentiel est invisible pour les yeux. » Cette leçon sur l’amitié et la responsabilité transforme sa vision du monde.</p>
+    <p>Le récit se conclut de manière poétique et énigmatique : après avoir été mordu par un serpent pour pouvoir “retourner chez lui”, le petit prince disparaît. L’aviateur, réparant son avion, reste seul dans le désert mais garde en lui la promesse d’un lien éternel avec son ami. Le livre se ferme sur une invitation à garder vivante l’enfance et la tendresse dans un monde d’adultes rationnels.</p>
+  `,
+  interpretation: `
+    <p><em>Le Petit Prince</em> est à la fois un conte poétique, une fable philosophique et une méditation sur l’enfance, la solitude et le sens de la vie. Sous son apparente simplicité, le texte aborde des thèmes universels : l’amitié, l’amour, la perte, la responsabilité et la quête de l’essentiel. À travers la figure du petit prince, Saint-Exupéry oppose la pureté du regard enfantin à la rigidité de la raison adulte. Les “grandes personnes” du récit représentent des formes d’aliénation : domination, orgueil, productivisme, avidité ; elles ont perdu la capacité d’émerveillement et d’écoute.</p>
+    <p>La relation entre le petit prince et le renard constitue le cœur moral de l’œuvre. L’acte d’« apprivoiser » devient une métaphore de la construction du lien et de la responsabilité réciproque : aimer, c’est se rendre unique pour l’autre. La rose, fragile et exigeante, symbolise l’amour, mais aussi la conscience que la beauté s’accompagne de vulnérabilité. L’univers poétique du conte traduit la nostalgie d’un monde intérieur où la vérité n’est pas mesurable mais vécue.</p>
+    <p>Écrit en exil pendant la Seconde Guerre mondiale, le livre peut aussi se lire comme un message humaniste face à la barbarie : il rappelle la nécessité de préserver l’innocence, la bonté et l’imagination dans un monde déchiré. Le désert y devient un espace de dépouillement et de révélation, où la parole retrouve son sens. Par son langage limpide et symbolique, <em>Le Petit Prince</em> touche à la fois l’enfant et l’adulte ; il fait de la poésie une forme de sagesse, invitant chacun à redevenir “responsable de sa rose”.</p>
+  `
+}
+,
+
+
+
+
+
+
+  {title:"Vol de nuit", author:"Antoine de Saint-Exupéry", year:1931, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"La Civilisation, ma mère !", author:"Driss Chraïbi", year:1972, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"L’Amour, la fantasia", author:"Assia Djebar", year:1985, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Cahier d’un retour au pays natal", author:"Aimé Césaire", year:1939, era:"Contemporain & Francophone", form:"Poésie"},
+  {title:"Le Devoir de violence", author:"Yambo Ouologuem", year:1968, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"La Nuit des temps", author:"René Barjavel", year:1968, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"La Possibilité d’une île", author:"Michel Houellebecq", year:2005, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Les Particules élémentaires", author:"Michel Houellebecq", year:1998, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"L’Élégance du hérisson", author:"Muriel Barbery", year:2006, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Bonjour tristesse", author:"Françoise Sagan", year:1954, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Gigi", author:"Colette", year:1944, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Chéri", author:"Colette", year:1920, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Claudine à l’école", author:"Colette", year:1900, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Le Rivage des Syrtes", author:"Julien Gracq", year:1951, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"La Place", author:"Annie Ernaux", year:1983, era:"Contemporain & Francophone", form:"Mémoires / Essais"},
+  {title:"Les Années", author:"Annie Ernaux", year:2008, era:"Contemporain & Francophone", form:"Mémoires / Essais"},
+  {title:"Texaco", author:"Patrick Chamoiseau", year:1992, era:"Contemporain & Francophone", form:"Roman"},
+  {title:"Désert", author:"J.-M. G. Le Clézio", year:1980, era:"Contemporain & Francophone", form:"Roman"}
+];
+
+const params = new URLSearchParams(location.search);
+const slug = params.get('slug') || '';
+
+const slugify = s => (s||"")
+  .toString().toLowerCase()
+  .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+  .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+
+const work = WORKS.find(w => slugify(`${w.title}-${w.author}-${w.year||''}`) === slug);
+
+if(work){
+  document.title = `${work.title} — Fiche`;
+  document.getElementById('title').textContent = `${work.title} (${work.year||'s.d.'})`;
+  document.getElementById('author').textContent = work.author;
+  document.getElementById('year').textContent = work.year || 's.d.';
+  document.getElementById('era').textContent = work.era;
+  document.getElementById('form').textContent = work.form;
+
+
+ // NEW: injecter le résumé / interprétation si fournis
+  if (work.resume) document.getElementById('resume').innerHTML = work.resume.trim();
+  if (work.interpretation) document.getElementById('interpretation').innerHTML = work.interpretation.trim();
+}else{
+  document.getElementById('title').textContent = "Œuvre introuvable";
+  document.getElementById('author').textContent = "—";
+  document.getElementById('year').textContent = "—";
+  document.getElementById('era').textContent = "—";
+  document.getElementById('form').textContent = "—";
+  document.getElementById('resume').innerHTML = "<p>Le lien est invalide ou l’œuvre n’est pas encore dans la base.</p>";
+  document.getElementById('interpretation').innerHTML = "<p>Ajoute l’œuvre à la base de données, puis rouvre la fiche.</p>";
+}
+</script>
+</body>
+</html>
