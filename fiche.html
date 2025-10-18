@@ -1269,24 +1269,277 @@ const WORKS = [
 
 
 
-  {title:"Vol de nuit", author:"Antoine de Saint-Exupéry", year:1931, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"La Civilisation, ma mère !", author:"Driss Chraïbi", year:1972, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"L’Amour, la fantasia", author:"Assia Djebar", year:1985, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Cahier d’un retour au pays natal", author:"Aimé Césaire", year:1939, era:"Contemporain & Francophone", form:"Poésie"},
-  {title:"Le Devoir de violence", author:"Yambo Ouologuem", year:1968, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"La Nuit des temps", author:"René Barjavel", year:1968, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"La Possibilité d’une île", author:"Michel Houellebecq", year:2005, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Les Particules élémentaires", author:"Michel Houellebecq", year:1998, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"L’Élégance du hérisson", author:"Muriel Barbery", year:2006, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Bonjour tristesse", author:"Françoise Sagan", year:1954, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Gigi", author:"Colette", year:1944, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Chéri", author:"Colette", year:1920, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Claudine à l’école", author:"Colette", year:1900, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Le Rivage des Syrtes", author:"Julien Gracq", year:1951, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"La Place", author:"Annie Ernaux", year:1983, era:"Contemporain & Francophone", form:"Mémoires / Essais"},
-  {title:"Les Années", author:"Annie Ernaux", year:2008, era:"Contemporain & Francophone", form:"Mémoires / Essais"},
-  {title:"Texaco", author:"Patrick Chamoiseau", year:1992, era:"Contemporain & Francophone", form:"Roman"},
-  {title:"Désert", author:"J.-M. G. Le Clézio", year:1980, era:"Contemporain & Francophone", form:"Roman"}
+  {
+  title: "Vol de nuit",
+  author: "Antoine de Saint-Exupéry",
+  year: 1931,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Inspiré par l’Aéropostale en Amérique du Sud, le roman suit Rivière, chef de réseau, et Fabien, pilote de nuit pris dans la tempête. Comme l’explique Michel Quesnel (<em>Saint-Exupéry</em>, 1993), l’œuvre allie réalisme technique et fable morale sur le devoir et le risque.</p>
+    <p>La narration polyphonique fait entendre la chaîne humaine des vols postaux; le ciel devient espace d’épreuve et d’éthique collective.</p>
+  `,
+  interpretation: `
+    <p>Pierre de Boisdeffre (<em>Histoire vivante de la littérature d’aujourd’hui</em>, 1968) lit une “tragédie du service” : la grandeur naît de la fidélité à la mission. Pour Jean Prévost (1931), le roman invente une épique moderne du travail organisé.</p>
+    <p>On y voit le prélude philosophique du <em>Petit Prince</em> : l’homme se sauve par la responsabilité partagée, non par l’héroïsme individuel.</p>
+  `
+},
+{
+  title: "La Civilisation, ma mère !",
+  author: "Driss Chraïbi",
+  year: 1972,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Chronique satirique d’une mère marocaine que “la civilisation” émancipe dans le Maroc post-colonial. Le récit, entre tendresse et ironie, est porté par la voix des fils. Dominique Jurt (<em>Driss Chraïbi</em>, 1990) souligne la critique des patriarcats et du mimétisme occidental.</p>
+    <p>Le roman met en scène l’entrée de la radio, de la voiture et du vote dans l’espace domestique — comédie de l’émancipation féminine.</p>
+  `,
+  interpretation: `
+    <p>Pour Charles Bonn (<em>La littérature maghrébine</em>, 1985), Chraïbi renverse le regard colonial par une modernité joyeuse et caustique. Le texte devient pédagogie de la liberté au quotidien.</p>
+    <p>Le rire agit comme arme politique douce : la “civilisation” n’est pas donnée, elle se co-invente dans la famille.</p>
+  `
+},
+{
+  title: "L’Amour, la fantasia",
+  author: "Assia Djebar",
+  year: 1985,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Montage de voix féminines, archives de la conquête d’Algérie et fragments autobiographiques : Djebar tisse une contre-histoire sensible. Clarisse Zimra (préface, 1992) parle d’“auto-histoire” décoloniale où français et arabe se répondent.</p>
+    <p>Le livre juxtapose désir et mémoire, corps et langue, pour libérer une parole longtemps confisquée.</p>
+  `,
+  interpretation: `
+    <p>Jane Hiddleston (<em>Assia Djebar</em>, 2006) montre comment l’écriture polyphonique subvertit l’archive coloniale. Pour Françoise Lionnet, l’autobiographie devient zone de créolisation des langues.</p>
+    <p>Le roman érige une éthique d’écoute : faire place aux voix historiques refoulées — surtout celles des femmes.</p>
+  `
+},
+{
+  title: "Cahier d’un retour au pays natal",
+  author: "Aimé Césaire",
+  year: 1939,
+  era: "Contemporain & Francophone",
+  form: "Poésie",
+  resume: `
+    <p>Poème fondateur de la Négritude : retour à la Martinique, révolte contre l’aliénation coloniale, naissance d’une parole noire universelle. André Breton (préface, 1947) salue une “poésie de la connaissance”.</p>
+    <p>Langue volcaniquement métaphorique, rythme incantatoire, figures cosmiques. Édouard Glissant y voit l’émergence d’une poétique relationnelle.</p>
+  `,
+  interpretation: `
+    <p>Lilyan Kesteloot (<em>Histoire de la Négritude</em>, 1963) lit le <em>Cahier</em> comme geste d’auto-nomination : du “nègre” honteux au sujet souverain. Le “Je” devient chœur panafricain.</p>
+    <p>La visée est à la fois politique et ontologique : reconquérir un temps, une langue, un corps.</p>
+  `
+},
+{
+  title: "Le Devoir de violence",
+  author: "Yambo Ouologuem",
+  year: 1968,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Chronique baroque d’un empire sahélien fictif, entre tyrannie endogène et violences coloniales. Le livre (Prix Renaudot 1968) brise l’angélisme des mythes nationaux.</p>
+    <p>La narration éclatée, pastiche et archives, construit une généalogie du pouvoir sans innocence. Dominic Thomas (<em>African Art and Literature</em>, 2012) insiste sur la radicalité démythifiante.</p>
+  `,
+  interpretation: `
+    <p>Christopher Wise lit une politique du scandale : dévoiler la complicité des élites et du colonial. Malgré les polémiques intertextuelles ultérieures, l’impact critique demeure majeur.</p>
+    <p>Le roman met en crise toute téléologie héroïque : l’Histoire est un théâtre d’exploitation structurelle.</p>
+  `
+},
+{
+  title: "La Nuit des temps",
+  author: "René Barjavel",
+  year: 1968,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Découverte en Antarctique d’un couple préhistorique conservé : fable SF de l’amour et du progrès destructeur. Gérard Klein situe Barjavel dans une lignée humaniste de la SF française.</p>
+    <p>Science, mythe et mélodrame se conjuguent pour interroger la répétition catastrophique de l’Histoire.</p>
+  `,
+  interpretation: `
+    <p>Simon Bréan (<em>La Science-fiction en France</em>, 2012) souligne l’archéologie du futur comme miroir moral du présent. Le lyrisme barjavelien oppose technique et pitié.</p>
+    <p>Romance et épique technologique : la compassion comme ultime recours face à l’entropie.</p>
+  `
+},
+{
+  title: "La Possibilité d’une île",
+  author: "Michel Houellebecq",
+  year: 2005,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Alternance entre Daniel1, humoriste misanthrope, et ses clones post-humains : satire biologique de la solitude et des sectes techno-spirituelles. Agathe Novak-Lechevalier (<em>Houellebecq</em>, 2017) éclaire l’articulation ironie/mélancolie.</p>
+    <p>Le roman déploie un futur déserté d’affects où survit la mémoire des corps.</p>
+  `,
+  interpretation: `
+    <p>Dominique Viart voit une méditation sur l’extinction du désir et la tentation transhumaniste. Le clonage sert d’allégorie : survivre n’est pas vivre.</p>
+    <p>Fable métaphysique sur la communauté impossible — et la littérature comme dernier lien.</p>
+  `
+},
+{
+  title: "Les Particules élémentaires",
+  author: "Michel Houellebecq",
+  year: 1998,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Deux demi-frères, Michel (biologiste) et Bruno (prof de lettres), traversent l’Occident libéral-libidinal des années 1990. Le roman mêle récit de mœurs et spéculation biotechnologique.</p>
+    <p>Sexualité, marché et spiritualité déchue : radiographie d’une anthropologie en crise.</p>
+  `,
+  interpretation: `
+    <p>Bruno Blanckeman (<em>Les Fictions singulières</em>, 2012) lit une “anti-utopie biologique”. Pour Sabine van Wesemael, Houellebecq construit un naturalisme des passions contemporaines.</p>
+    <p>La provocation sert un diagnostic : l’individu néolibéral est un être désaffilié.</p>
+  `
+},
+{
+  title: "L’Élégance du hérisson",
+  author: "Muriel Barbery",
+  year: 2006,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Journal croisé de Renée, concierge lettrée, et Paloma, adolescente surdouée, dans un immeuble cossu. Le récit cultive une éthique de la beauté quotidienne.</p>
+    <p>Philosophie, art, thé et haïkus : une esthétique de l’attention. Dominique Rabaté note la douceur critique du roman d’apprentissage.</p>
+  `,
+  interpretation: `
+    <p>Le livre célèbre la transclassement par la culture : distinction invisible contre clichés sociaux (Bourdieu en arrière-plan). Le “hérisson” métaphorise l’alliance secret/sensibilité.</p>
+    <p>Best-seller mais aussi manifeste d’une civilité poétique.</p>
+  `
+},
+{
+  title: "Bonjour tristesse",
+  author: "Françoise Sagan",
+  year: 1954,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>À 18 ans, Sagan raconte l’été cruel de Cécile sur la Côte d’Azur : libertinage, jalousie, culpabilité. Le minimalisme stylé capture l’ennui doré des Trente Glorieuses naissantes.</p>
+    <p>Succès scandaleux : invention d’une voix féminine moderne, froide et lucide.</p>
+  `,
+  interpretation: `
+    <p>Nelly Kaprièlian voit une morale sans illusion, sous élégance glacée. Pour Bernard Frank, Sagan impose une génération “a-morale” — miroir d’époque.</p>
+    <p>Roman du calcul affectif : la tristesse comme signature existentielle.</p>
+  `
+},
+{
+  title: "Gigi",
+  author: "Colette",
+  year: 1944,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Éducation sentimentale d’une jeune fille promise au rôle de courtisane, qui choisit l’amour. Claude Pichois (<em>Colette</em>, 1982) souligne la précision sensuelle et morale de la prose.</p>
+    <p>Paris Belle Époque filtré par l’ironie : rites mondains, maternités spirituelles, renversement final.</p>
+  `,
+  interpretation: `
+    <p>Gérard Bonal lit un féminisme discret : Colette subvertit la “formation” en liberté du désir. L’éthique colettienne privilégie l’accord avec soi plutôt que la conformité sociale.</p>
+    <p>Le style, fait de gestes et de lumières, est une morale.</p>
+  `
+},
+{
+  title: "Chéri",
+  author: "Colette",
+  year: 1920,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Amour entre Léa, demi-mondaine mûre, et Chéri, jeune homme capricieux. Après la rupture, la nostalgie détruit Chéri. Kristeva a montré la puissance d’une écriture du corps et du temps.</p>
+    <p>Roman de l’initiation inversée : la femme forme et perd l’homme.</p>
+  `,
+  interpretation: `
+    <p>Claude Pichois voit l’analyse implacable de l’éphémère. Colette invente une métaphysique des surfaces : peau, tissus, miroirs — réalités morales.</p>
+    <p>Une élégie du désir comme saison.</p>
+  `
+},
+{
+  title: "Claudine à l’école",
+  author: "Colette",
+  year: 1900,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Journal frondeur d’une collégienne : provincialisme, éveil sensuel, satire scolaire. Œuvre de jeunesse signée “Willy et Colette” puis réattribuée.</p>
+    <p>Naissance d’une voix féminine insolente, mixant gouaille et précision descriptive.</p>
+  `,
+  interpretation: `
+    <p>Michel Delon souligne l’invention d’un timbre narratif neuf. Le roman fonde une lignée d’héroïnes libres — laboratoire de l’autofiction.</p>
+    <p>La langue y est déjà une éthique : se dire contre les cadres.</p>
+  `
+},
+{
+  title: "Le Rivage des Syrtes",
+  author: "Julien Gracq",
+  year: 1951,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Veille immobile d’un État décadent aux confins d’une mer interdite : attente, désir de guerre. Prix Goncourt refusé. Jean-Yves Tadié souligne l’onirisme géopolitique.</p>
+    <p>Syntaxe ample, paysages mentaux : le temps suspendu devient matière romanesque.</p>
+  `,
+  interpretation: `
+    <p>Roger Caillois voit une parabole de la tentation du désastre. Le roman oppose la volupté de l’attente à la catastrophe qu’elle appelle.</p>
+    <p>Chef-d’œuvre du “romanesque pur”, hors réalisme et hors allégorie univoque.</p>
+  `
+},
+{
+  title: "La Place",
+  author: "Annie Ernaux",
+  year: 1983,
+  era: "Contemporain & Francophone",
+  form: "Mémoires / Essais",
+  resume: `
+    <p>Récit sec sur le père, l’ascension sociale et la honte de classe. Écriture dite “plate” pour viser la vérité sociologique de l’intime.</p>
+    <p>Le document familial devient champ d’enquête. Philippe Gasparini situe Ernaux au croisement autobiographie/socioanalyse.</p>
+  `,
+  interpretation: `
+    <p>Pour Pierre-Louis Fort, l’éthique d’Ernaux est celle de la justesse : détruire l’emphase pour sauver le réel. La littérature comme outil de mémoire collective.</p>
+    <p>Le “je” est une position politique de regard.</p>
+  `
+},
+{
+  title: "Les Années",
+  author: "Annie Ernaux",
+  year: 2008,
+  era: "Contemporain & Francophone",
+  form: "Mémoires / Essais",
+  resume: `
+    <p>Autobiographie impersonnelle 1940-2000 : photos, slogans, objets. Montage mémoriel d’une génération. Prix Nobel 2022 pour l’ensemble.</p>
+    <p>Le “nous” remplace le “je” : archives intimes/collectives.</p>
+  `,
+  interpretation: `
+    <p>Dominique Viart parle d’“autobiographie de groupe”. La forme chorale politise la mémoire en la dé-psychologisant.</p>
+    <p>Écriture de la sédimentation : histoire sociale comme palimpseste sensible.</p>
+  `
+},
+{
+  title: "Texaco",
+  author: "Patrick Chamoiseau",
+  year: 1992,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Saga d’un quartier martiniquais bâti par les anciens esclaves et migrants. Français, créole, archives orales : polyphonie d’une mémoire urbaine. Prix Goncourt 1992.</p>
+    <p>Éloge de la créolité (Bernabé-Chamoiseau-Confiant, 1989) en pratique narrative.</p>
+  `,
+  interpretation: `
+    <p>Édouard Glissant éclaire la “poétique de la Relation” : identité comme archipel. Le roman transforme l’urbanisme en acte poétique et politique.</p>
+    <p>Le conteur devient urbaniste de la mémoire.</p>
+  `
+},
+{
+  title: "Désert",
+  author: "J.-M. G. Le Clézio",
+  year: 1980,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Destins croisés de Lalla, jeune Saharienne, et d’un ancêtre des tribus bleues. Écriture de la lumière, exil et dignité des nomades. Prix Nobel 2008 (corpus).</p>
+    <p>Le roman alterne épopée et errance moderne : Marseille, désert, mer.</p>
+  `,
+  interpretation: `
+    <p>Bruno Thibault lit une “éthique de la douceur” face à la modernité violente. Le Clézio substitue au récit d’aventure la patience du regard.</p>
+    <p>Le monde est sauvé par l’attention et la pauvreté volontaire.</p>
+  `
+}
+
 ];
 
 const params = new URLSearchParams(location.search);
