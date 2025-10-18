@@ -65,32 +65,341 @@
 const WORKS = [
 
 
-{title:"Manon Lescaut", author:"Abbé Prévost", year:1731, era:"Lumières (XVIIIe)", form:"Roman", themes:["passion","destin","moralité"]},
-{title:"Paul et Virginie", author:"Bernardin de Saint-Pierre", year:1788, era:"Lumières (XVIIIe)", form:"Roman", themes:["innocence","nature","tragédie"]},
-{title:"Les Chouans", author:"Honoré de Balzac", year:1829, era:"Réalisme & Naturalisme", form:"Roman", themes:["guerre civile","royalisme","province"]},
-{title:"La Cousine Bette", author:"Honoré de Balzac", year:1846, era:"Réalisme & Naturalisme", form:"Roman", themes:["vengeance","famille","Paris"]},
-{title:"Poésies", author:"Paul Verlaine", year:1884, era:"Fin-de-siècle & Symbolisme", form:"Poésie", themes:["musicalité","mélancolie","impression"]},
-{title:"Les Nourritures terrestres", author:"André Gide", year:1897, era:"Fin-de-siècle & Symbolisme", form:"Mémoires / Essais", themes:["désir","liberté","hédonisme"]},
-{title:"Le Grand Meaulnes", author:"Alain-Fournier", year:1913, era:"Modernisme & Surréalisme", form:"Roman", themes:["adolescence","mystère","nostalgie"]},
-{title:"Calligrammes", author:"Guillaume Apollinaire", year:1918, era:"Modernisme & Surréalisme", form:"Poésie", themes:["typographie","guerre","modernité"]},
-{title:"Le Silence de la mer", author:"Vercors", year:1942, era:"Après-guerre & Existentialisme", form:"Roman", themes:["résistance","dignité","occupation"]},
-{title:"Meursault, contre-enquête", author:"Kamel Daoud", year:2013, era:"Contemporain & Francophone", form:"Roman", themes:["réécriture","Algérie","voix"]},
-{title:"Soumission", author:"Michel Houellebecq", year:2015, era:"Contemporain & Francophone", form:"Roman", themes:["politique","identité","satire"]},
-{title:"La Carte et le territoire", author:"Michel Houellebecq", year:2010, era:"Contemporain & Francophone", form:"Roman", themes:["art","travail","célébrité"]},
-{title:"Petit pays", author:"Gaël Faye", year:2016, era:"Contemporain & Francophone", form:"Roman", themes:["enfance","exil","guerre civile"]},
-{title:"Le Lambeau", author:"Philippe Lançon", year:2018, era:"Contemporain & Francophone", form:"Mémoires / Essais", themes:["trauma","résilience","journalisme"]},
+{
+  title: "Manon Lescaut",
+  author: "Abbé Prévost",
+  year: 1731,
+  era: "Lumières (XVIIIe)",
+  form: "Roman",
+  resume: `
+    <p>Publié en 1731, <em>Manon Lescaut</em> clôt les <em>Mémoires et aventures d’un homme de qualité</em> de l’abbé Prévost. Le roman raconte la passion tragique entre le chevalier Des Grieux et Manon, jeune femme séduisante mais inconstante. Comme l’écrit Jean Sgard dans <em>L’Abbé Prévost, romancier du bonheur</em> (1968), l’œuvre mêle pathétique et critique morale : le libertinage y côtoie la grâce.</p>
+    <p>Des Grieux, narrateur repentant, évoque sa chute : il abandonne tout pour suivre Manon, jusqu’à la déportation en Louisiane où elle meurt dans le désert. Le récit illustre le conflit entre passion et vertu, cœur et raison, dans une société moraliste.</p>
+  `,
+  interpretation: `
+    <p>Pour Jean Goldzink (<em>Prévost et le roman moral</em>, 1995), <em>Manon Lescaut</em> représente "le tournant du roman sensible" : la passion devient une expérience existentielle et non plus seulement morale. L’amour absolu s’y heurte à l’ordre social et religieux.</p>
+    <p>Michel Delon (<em>Le Savoir-vivre libertin</em>, 2000) voit dans Manon une héroïne moderne, ni ange ni démon, reflet des contradictions du siècle. L’émotion sincère de Des Grieux annonce la sensibilité rousseauiste, tandis que la mort de Manon consacre la fatalité du désir.</p>
+  `
+},
+{
+  title: "Paul et Virginie",
+  author: "Bernardin de Saint-Pierre",
+  year: 1788,
+  era: "Lumières (XVIIIe)",
+  form: "Roman",
+  resume: `
+    <p>Roman emblématique du préromantisme, <em>Paul et Virginie</em> raconte l’amour pur de deux enfants élevés dans l’île Maurice, loin de la civilisation. Comme le rappelle Raymond Trousson (<em>Bernardin de Saint-Pierre et le mythe du bon sauvage</em>, 1972), le roman transpose les idées rousseauistes de nature et de vertu.</p>
+    <p>Lorsque Virginie part en France, la corruption morale et sociale l’éloigne de la simplicité originelle. Son naufrage à son retour symbolise l’impossibilité de concilier innocence et société. Le roman connut un immense succès jusqu’au XIXe siècle.</p>
+  `,
+  interpretation: `
+    <p>Pour Jean Starobinski (<em>Le remède dans le mal</em>, 1989), le récit illustre "le rêve d’un paradis perdu" où nature et morale se confondent. L’œuvre exprime la nostalgie d’une harmonie primitive rompue par la civilisation.</p>
+    <p>Anne-Marie Thiesse (<em>Le Roman du quotidien</em>, 1984) y voit la naissance du roman familial et sentimental : la vertu domestique y devient le modèle d’une sensibilité universelle. <em>Paul et Virginie</em> annonce le romantisme par sa fusion du paysage et du sentiment.</p>
+  `
+},
+{
+  title: "Les Chouans",
+  author: "Honoré de Balzac",
+  year: 1829,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Premier grand roman historique de Balzac, <em>Les Chouans</em> se déroule en Bretagne en 1799, pendant l’insurrection royaliste. Le jeune officier républicain Corentin affronte les Chouans menés par le marquis de Montauran. Comme l’explique Pierre Barbéris (<em>Balzac et le mal du siècle</em>, 1970), le roman allie drame politique et intrigue amoureuse entre Montauran et Marie de Verneuil.</p>
+    <p>Balzac y oppose passions individuelles et forces collectives, inaugurant sa <em>Comédie humaine</em>. L’arrière-plan provincial donne à la guerre civile une dimension symbolique : la fracture morale de la France postrévolutionnaire.</p>
+  `,
+  interpretation: `
+    <p>Pour Roland Chollet (<em>Balzac romancier</em>, 1974), <em>Les Chouans</em> traduit "le romantisme réaliste" de Balzac : exaltation du destin, mais observation précise du social. Le roman marque l’entrée du réel historique dans la littérature.</p>
+    <p>Philippe Berthier (<em>Balzac: l’envers de l’histoire</em>, 2001) souligne la tension entre foi et raison : Balzac comprend les deux camps sans les juger, donnant à l’Histoire la profondeur d’une tragédie humaine.</p>
+  `
+},
+{
+  title: "La Cousine Bette",
+  author: "Honoré de Balzac",
+  year: 1846,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Publié en 1846, <em>La Cousine Bette</em> appartient aux <em>Parents pauvres</em> de la <em>Comédie humaine</em>. Lise Fischer, dite “la cousine Bette”, ourdit une vengeance contre sa belle-famille, les Hulot, qui l’ont humiliée. Comme l’écrit André Maurois dans <em>Prométhée ou la vie de Balzac</em> (1965), le roman explore la jalousie, la corruption et la décadence de la bourgeoisie parisienne.</p>
+    <p>Balzac peint avec minutie le Paris du XIXe siècle : artistes ruinés, militaires déchus, courtisanes ambitieuses. L’économie du désir devient moteur de la société.</p>
+  `,
+  interpretation: `
+    <p>Pour Pierre Barbéris (<em>Le Monde de Balzac</em>, 1973), <em>La Cousine Bette</em> est “une tragédie de l’envie” : Bette se fait démiurge du mal social. Le réalisme balzacien atteint ici son sommet psychologique.</p>
+    <p>Michel Butor (<em>Essais sur Balzac</em>, 1965) y voit “un roman du pouvoir et de la ruine”, où la société se dévore elle-même. L’œuvre anticipe le naturalisme par sa précision clinique et son pessimisme social.</p>
+  `
+},
+{
+  title: "Poésies",
+  author: "Paul Verlaine",
+  year: 1884,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Poésie",
+  resume: `
+    <p>Les <em>Poésies</em> de Verlaine (notamment <em>Romances sans paroles</em> et <em>Jadis et Naguère</em>) illustrent la transition du Parnasse au symbolisme. Comme le note Jacques Borel dans <em>Verlaine et la mélancolie</em> (1969), la musique du vers et la nuance des sensations remplacent la description directe.</p>
+    <p>Le poète, oscillant entre foi, sensualité et repentir, cherche une langue fluide “où l’indécis au précis se joint” (<em>Art poétique</em>). Les sonorités deviennent la vraie matière du poème.</p>
+  `,
+  interpretation: `
+    <p>Paul Verlaine prône la “musique avant toute chose” : selon Antoine Compagnon (<em>Les Cinq paradoxes de la modernité</em>, 1990), il invente la modernité poétique par l’ambiguïté et la suggestion. Le moi se dissout dans l’impression.</p>
+    <p>Henri de Régnier (<em>Verlaine</em>, 1903) voyait déjà dans sa poésie “un frisson de l’âme moderne” : la mélancolie devient esthétique. L’œuvre inspire tout le symbolisme européen et prépare le surréalisme.</p>
+  `
+},
+{
+  title: "Les Nourritures terrestres",
+  author: "André Gide",
+  year: 1897,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Mémoires / Essais",
+  resume: `
+    <p><em>Les Nourritures terrestres</em> se présentent comme un évangile hédoniste adressé à un disciple, Nathanaël. Gide y prêche la liberté, le désir et la sensualité comme voies de connaissance. Comme le montre Pierre Masson dans <em>André Gide: la tentation du bonheur</em> (1995), l’œuvre rompt avec le moralisme bourgeois fin-de-siècle.</p>
+    <p>Le texte, poétique et fragmentaire, alterne prose lyrique et méditation. Il célèbre le voyage, l’instant et la découverte de soi à travers les sens.</p>
+  `,
+  interpretation: `
+    <p>Pour Jean Delay (<em>La Jeunesse d’André Gide</em>, 1956), l’ouvrage marque “la conversion au vitalisme” : l’homme s’y définit par le désir de vivre pleinement. Gide substitue au salut religieux une éthique du plaisir conscient.</p>
+    <p>Albert Camus (<em>L’Homme révolté</em>, 1951) voyait dans cette œuvre “la Bible du libertin moderne” : elle fonde un humanisme de la liberté individuelle. Sa musicalité et son lyrisme annoncent la prose poétique du XXe siècle.</p>
+  `
+},
+{
+  title: "Le Grand Meaulnes",
+  author: "Alain-Fournier",
+  year: 1913,
+  era: "Modernisme & Surréalisme",
+  form: "Roman",
+  resume: `
+    <p>Unique roman d’Alain-Fournier, <em>Le Grand Meaulnes</em> relate l’amitié entre François Seurel et Augustin Meaulnes, et la quête d’une fête perdue et d’un amour idéal. Comme l’analyse Henri Mitterand (<em>Le Grand Meaulnes ou la légende du bonheur</em>, 1964), l’œuvre est à la fois récit d’initiation et mythe de l’enfance éternelle.</p>
+    <p>Le domaine mystérieux d’Yvonne de Galais incarne le rêve inaccessible, tandis que le retour à la réalité scelle la mélancolie du roman. La narration à deux voix renforce le charme nostalgique du souvenir.</p>
+  `,
+  interpretation: `
+    <p>Jean-Pierre Richard (<em>L’Univers imaginaire d’Alain-Fournier</em>, 1963) voit dans le roman “la quête d’un absolu perdu” : Meaulnes personnifie le désir infini et la déchirure de l’adolescence. Le style simple et poétique participe de la magie du souvenir.</p>
+    <p>Pour Maurice Blanchot (<em>Le Livre à venir</em>, 1959), <em>Le Grand Meaulnes</em> est “l’un des mythes fondateurs du roman moderne” : l’enfance y devient catégorie existentielle, entre réalité et rêve.</p>
+  `
+},
+{
+  title: "Calligrammes",
+  author: "Guillaume Apollinaire",
+  year: 1918,
+  era: "Modernisme & Surréalisme",
+  form: "Poésie",
+  resume: `
+    <p>Recueil posthume, <em>Calligrammes</em> sous-titré “Poèmes de la paix et de la guerre (1913–1916)” illustre la poésie visuelle d’Apollinaire. Les mots y forment des dessins — colombes, montres, fusils — liant typographie et sens. Comme le note Michel Décaudin dans <em>Apollinaire: poète et soldat</em> (1968), l’expérimentation formelle devient un acte de foi dans la modernité.</p>
+    <p>Les thèmes oscillent entre amour, guerre et invention : la poésie se fait art total, intégrant graphisme et émotion. </p>
+  `,
+  interpretation: `
+    <p>Pour Guillaume Apollinaire lui-même, le calligramme est “une idéogrammatisation du sentiment”. Selon Henri Béhar (<em>Apollinaire</em>, 1998), le poète invente un nouveau rapport entre texte et image, annonçant le surréalisme et la poésie concrète.</p>
+    <p>Jean-Claude Chevalier (<em>La Poétique d’Apollinaire</em>, 1997) souligne que la guerre transforme son lyrisme : le modernisme devient réponse esthétique à la barbarie. Le langage graphique exprime la liberté créatrice du XXe siècle naissant.</p>
+  `
+},
+{
+  title: "Le Silence de la mer",
+  author: "Vercors",
+  year: 1942,
+  era: "Après-guerre & Existentialisme",
+  form: "Roman",
+  resume: `
+    <p>Publié clandestinement en 1942, <em>Le Silence de la mer</em> raconte la cohabitation forcée d’un officier allemand cultivé et d’un vieil homme français avec sa nièce. Comme le souligne Jean-Pierre Azéma (<em>La Résistance</em>, 1979), le récit devient une parabole du refus et de la dignité face à l’Occupation.</p>
+    <p>Le silence obstiné des Français oppose une résistance morale au discours humaniste de l’ennemi. Le texte, bref et épuré, incarne la littérature engagée du maquis.</p>
+  `,
+  interpretation: `
+    <p>Pour Maurice Blanchot (<em>La Part du feu</em>, 1949), le silence devient “parole absolue” : il exprime l’impossibilité de dialoguer avec la barbarie. L’œuvre fonde l’esthétique du témoignage discret mais éthique.</p>
+    <p>Jean-Paul Sartre (<em>Situations III</em>, 1949) y voit un modèle de littérature de responsabilité : le choix moral prime sur la parole. Vercors fait du mutisme une forme de résistance universelle.</p>
+  `
+},
+{
+  title: "Meursault, contre-enquête",
+  author: "Kamel Daoud",
+  year: 2013,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Publié en 2013, ce roman donne la parole au frère de “l’Arabe” tué dans <em>L’Étranger</em> de Camus. Kamel Daoud réécrit le mythe du point de vue algérien, renversant la perspective coloniale. Comme le note Dominique Viart (<em>La Littérature française au présent</em>, 2015), l’œuvre explore la mémoire postcoloniale et la quête de vérité individuelle.</p>
+    <p>Le narrateur, Haroun, vieil homme désabusé, confronte l’héritage du silence et la figure écrasante de Meursault. Le roman oscille entre hommage et rébellion envers Camus.</p>
+  `,
+  interpretation: `
+    <p>Pour Catherine Brun (<em>Camus et ses doubles</em>, 2018), Daoud transforme le récit existentialiste en procès du colonialisme : l’“Arabe” devient sujet et non plus victime sans nom. L’écriture ironique interroge la filiation littéraire entre la France et l’Algérie.</p>
+    <p>Jean-Marie Gustave Le Clézio (<em>Discours du Nobel</em>, 2008) évoquait déjà ce besoin de “décoloniser la parole” : Daoud y répond avec lucidité, alliant classicisme et colère. L’œuvre s’impose comme un dialogue franco-maghrébin majeur du XXIe siècle.</p>
+  `
+},
+{
+  title: "Soumission",
+  author: "Michel Houellebecq",
+  year: 2015,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p><em>Soumission</em> imagine une France de 2022 gouvernée par un parti musulman modéré. François, universitaire désabusé, assiste à la transformation politique et spirituelle du pays. Comme le commente Agathe Novak-Lechevalier dans <em>Houellebecq, l’art de la consolation</em> (2017), le roman mêle satire politique et quête mystique.</p>
+    <p>À travers le cynisme du narrateur, Houellebecq interroge la crise identitaire de l’Occident : lassitude démocratique, déclin du désir, vide spirituel. L’islam devient miroir de l’Europe fatiguée d’elle-même.</p>
+  `,
+  interpretation: `
+    <p>Pour Pierre Jourde (<em>La Littérature sans estomac</em>, 2002), <em>Soumission</em> prolonge la veine provocatrice de Houellebecq : il ne prêche pas la peur mais l’abandon. La "soumission" est autant religieuse qu’existentielle — un désir de repos face au chaos.</p>
+    <p>Dominique Viart (<em>La Littérature française au présent</em>, 2015) y lit une fable métaphysique sur la disparition du libre arbitre. Sous la polémique, le roman médite sur la fatigue de la modernité et la nostalgie du sacré.</p>
+  `
+},
+
+{
+  title: "La Carte et le territoire",
+  author: "Michel Houellebecq",
+  year: 2010,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Ce roman, prix Goncourt 2010, suit la trajectoire de Jed Martin, photographe et artiste conceptuel dont la carrière se fonde sur une série de cartes Michelin. Comme le montre Agathe Novak-Lechevalier dans <em>Houellebecq, l’art de la consolation</em> (2017), l’œuvre explore les rapports entre création, marchandisation et solitude. Michel Houellebecq y insère une mise en abyme audacieuse : il devient personnage du roman, avant d’être assassiné dans une scène de polar grotesque.</p>
+    <p>Jed Martin observe le monde avec distance, peignant les métiers ordinaires (plombier, ingénieur) dans un style hyperréaliste. Le roman glisse de la satire du marché de l’art à une méditation sur la disparition des relations humaines dans une France vieillissante et désindustrialisée. Comme l’écrit Dominique Viart dans <em>La littérature française au présent</em> (2005), Houellebecq y poursuit sa vision d’un monde postmoderne “sans transcendance, où le travail reste le dernier lien social”.</p>
+  `,
+  interpretation: `
+    <p>Pour Bruno Blanckeman (<em>Les Fictions singulières</em>, 2012), <em>La Carte et le territoire</em> illustre “la mélancolie du contemporain” : l’art y devient un mode de survie dans un univers vide de sens. Le meurtre de l’écrivain Houellebecq symbolise la fin de l’auteur comme figure sacrée, remplacée par les circuits médiatiques et commerciaux. Novak-Lechevalier souligne la tendresse paradoxale du roman : sous le cynisme apparent, il célèbre la dignité silencieuse des artisans et la beauté du monde matériel.</p>
+    <p>Selon Sabine van Wesemael (<em>Michel Houellebecq ou la provocation permanente</em>, 2005), le texte constitue un “tombeau ironique” de la société occidentale : les cartes deviennent métaphores d’un territoire humain désormais illisible. L’œuvre s’inscrit ainsi dans la continuité du roman réaliste, tout en le dépassant par une dimension métaphysique et autoréflexive sur la création elle-même.</p>
+  `
+},
+{
+  title: "Petit pays",
+  author: "Gaël Faye",
+  year: 2016,
+  era: "Contemporain & Francophone",
+  form: "Roman",
+  resume: `
+    <p>Inspiré de l’enfance de l’auteur, né au Burundi d’un père français et d’une mère rwandaise, <em>Petit pays</em> retrace, à travers la voix du jeune Gaby, la perte de l’innocence dans le contexte du génocide rwandais et de la guerre civile burundaise. Comme l’explique Catherine Coquio dans <em>Rwanda, le réel et les récits</em> (2014), Faye mêle autobiographie et fiction pour explorer la mémoire traumatique des enfants témoins.</p>
+    <p>Gaby vit à Bujumbura dans une enclave paisible jusqu’à ce que la violence ethnique envahisse son univers. La fracture familiale (divorce des parents, fuite de la mère) symbolise la déchirure du pays. Selon Dominique Ranaivoson (<em>Littératures francophones d’Afrique</em>, 2018), Faye adopte une langue poétique simple, proche de l’oralité, pour rendre la nostalgie d’un paradis perdu.</p>
+  `,
+  interpretation: `
+    <p>Pour Gisèle Sapiro (<em>Les Écrivains et la guerre</em>, 2020), <em>Petit pays</em> s’inscrit dans la littérature de la mémoire postcoloniale : il décentre le regard sur le génocide et refuse le pathos au profit de l’intime. L’enfance devient un “espace d’innocence dévasté par l’histoire”. L’œuvre a rencontré un succès international et fut adaptée au cinéma (Éric Barbier, 2020), prolongeant la réflexion sur la transmission du trauma.</p>
+    <p>Comme le souligne Jean Kaempfer dans <em>Violence et récit</em> (2002), Faye montre comment la littérature peut “dire l’indicible” par la métaphore et la musique des mots. <em>Petit pays</em> incarne la résilience par l’écriture : transformer la perte en parole, et retrouver, dans la mémoire blessée, une identité francophone réconciliée entre Afrique et Europe.</p>
+  `
+},
+{
+  title: "Le Lambeau",
+  author: "Philippe Lançon",
+  year: 2018,
+  era: "Contemporain & Francophone",
+  form: "Mémoires / Essais",
+  resume: `
+    <p>Rescapé de l’attentat contre <em>Charlie Hebdo</em> en janvier 2015, Philippe Lançon entreprend dans <em>Le Lambeau</em> le récit de sa reconstruction physique et psychique. Comme l’écrit Annick Geille dans <em>La Revue des Deux Mondes</em> (2018), le livre oscille entre journal intime, essai sur la douleur, et méditation sur la littérature. Lançon décrit les mois passés à l’hôpital de la Pitié-Salpêtrière, entre opérations de la mâchoire, lectures de Proust et souvenirs de ses proches assassinés.</p>
+    <p>Son écriture lente et pudique s’attache à “restituer le temps éclaté” du trauma. Philippe Forest (<em>Le Roman, le réel et autres essais</em>, 2019) note que Lançon fait du témoignage une forme d’art : écrire devient une chirurgie parallèle, un acte de survie. Le livre obtint le prix Femina et le prix Renaudot spécial du jury en 2018.</p>
+  `,
+  interpretation: `
+    <p>Pour Dominique Viart (<em>Écrire le réel aujourd’hui</em>, 2020), <em>Le Lambeau</em> est “une œuvre de réparation par le langage” : l’auteur reconstruit symboliquement le visage de la France blessée. La littérature, ici, n’est plus un refuge mais un instrument de reconstruction morale. Lançon s’inscrit dans la lignée de Primo Levi et de Georges Perec, mêlant mémoire individuelle et collective.</p>
+    <p>Jean Birnbaum (<em>Le Monde des livres</em>, 2018) y voit “un livre d’après la catastrophe”, où l’écriture se fait acte de résistance contre le silence et la barbarie. Lançon transforme la douleur en œuvre d’art, fidèle à l’esprit laïque et humaniste de <em>Charlie Hebdo</em>. C’est un témoignage majeur sur la résilience, la fragilité du corps et la puissance de la littérature face au néant.</p>
+  `
+},
 
 
 
+{
+  title: "La Chanson de Roland",
+  author: "Anonyme",
+  year: 1100,
+  era: "Moyen Âge & Renaissance",
+  form: "Poésie",
+  resume: `
+    <p>Rédigée vers 1100 en ancien français, <em>La Chanson de Roland</em> est la plus célèbre des <em>chansons de geste</em>. Elle raconte la bataille de Roncevaux (778) où Roland, neveu de Charlemagne, meurt héroïquement en affrontant les Sarrasins. Comme l’explique Joseph Bédier dans son édition critique (1921), le poème mêle faits historiques et légende épique, transformant une embuscade basque en combat sacré entre chrétiens et païens.</p>
+    <p>Roland, symbole du chevalier parfait, refuse de sonner du cor pour appeler à l’aide, préférant mourir dans l’honneur. L’œuvre exalte les valeurs féodales : loyauté, bravoure, foi, fidélité au suzerain. Elle est composée de <em>laisses</em> assonancées, vers de dix syllabes, destinées à être chantées par les jongleurs.</p>
+  `,
+  interpretation: `
+    <p>Pour Pierre Le Gentil (<em>La Poésie épique médiévale</em>, 1958), le poème représente "la naissance d’une conscience nationale et chrétienne" : Charlemagne y incarne la France unifiée sous Dieu. L’opposition entre Roland et Ganelon (le traître) structure la morale chevaleresque et religieuse du Moyen Âge.</p>
+    <p>Sarah Kay (<em>The Chanson de Roland: Formulas and Narrative</em>, 1995) souligne la fonction orale et rituelle du texte : la répétition des formules crée une mémoire collective. Le sacrifice de Roland devient un mythe fondateur, comparable au martyr chrétien, préfigurant la figure du héros tragique.</p>
+  `
+},
+{
+  title: "Le Roman de la Rose",
+  author: "Guillaume de Lorris & Jean de Meun",
+  year: 1275,
+  era: "Moyen Âge & Renaissance",
+  form: "Poésie",
+  resume: `
+    <p>Commencé vers 1230 par Guillaume de Lorris et achevé vers 1275 par Jean de Meun, <em>Le Roman de la Rose</em> est une allégorie courtoise et philosophique en plus de 22 000 vers octosyllabiques. Guillaume conçoit la première partie comme un songe amoureux où le narrateur poursuit une rose, symbole de la dame aimée, selon les codes de l’amour courtois. Jean de Meun transforme ensuite le poème en vaste satire érudite mêlant mythologie, philosophie et morale.</p>
+    <p>Comme le note Daniel Poirion dans <em>Le Poète et le Prince</em> (1965), la deuxième partie fait du texte une encyclopédie du savoir médiéval : amour, astrologie, religion, politique, économie. Le ton devient plus ironique et polémique, préfigurant l’esprit critique du XIVe siècle.</p>
+  `,
+  interpretation: `
+    <p>Armand Strubel (<em>Le Roman de la Rose</em>, GF, 1992) voit dans cette œuvre "le miroir d’une société en mutation" : de la courtoisie à la raison. Jean de Meun y introduit un discours rationaliste et anticlérical qui annonce l’humanisme.</p>
+    <p>Pour Sylvia Huot (<em>The Romance of the Rose and Its Medieval Readers</em>, 1993), la dualité des deux auteurs révèle l’évolution du rapport à l’amour et au savoir : du sentiment idéalisé à la réflexion intellectuelle. Le texte devient ainsi un laboratoire de la pensée pré-humaniste.</p>
+  `
+},
+{
+  title: "Gargantua et Pantagruel",
+  author: "François Rabelais",
+  year: 1534,
+  era: "Moyen Âge & Renaissance",
+  form: "Roman",
+  resume: `
+    <p>Suite de cinq romans publiés entre 1532 et 1564, <em>Gargantua et Pantagruel</em> narre les aventures burlesques de deux géants père et fils. Rabelais y mêle érudition humaniste, satire religieuse et comique corporel. Comme l’explique M.A. Screech dans <em>Rabelais</em> (1979), le rire devient un instrument de liberté intellectuelle face à la censure de la Sorbonne.</p>
+    <p>Dans <em>Gargantua</em> (1534), l’éducation humaniste prônée par Ponocrates s’oppose à la scolastique médiévale. L’épisode de l’abbaye de Thélème célèbre un idéal de vie fondé sur la raison et la liberté : “Fais ce que voudras.”</p>
+  `,
+  interpretation: `
+    <p>Pour Mikhaïl Bakhtine (<em>L’Œuvre de François Rabelais et la culture populaire au Moyen Âge</em>, 1965), Rabelais incarne la “culture du carnaval” : inversion des hiérarchies, exaltation du corps et du rire comme forces vitales. Le roman devient une célébration de la liberté contre les dogmes.</p>
+    <p>Philippe Desan (<em>Rabelais: A Critical Biography</em>, 2016) rappelle que l’humanisme rabelaisien est aussi politique : l’éducation, la tolérance et la raison sont les armes de la modernité naissante. L’œuvre fonde le roman moderne par sa langue inventive et son dialogue constant entre érudition et folie.</p>
+  `
+},
+{
+  title: "Essais",
+  author: "Montaigne",
+  year: 1580,
+  era: "Moyen Âge & Renaissance",
+  form: "Mémoires / Essais",
+  resume: `
+    <p>Publiés pour la première fois en 1580 et continuellement remaniés jusqu’à la mort de l’auteur, les <em>Essais</em> constituent une œuvre fondatrice de la prose moderne. Montaigne s’y observe lui-même pour réfléchir à la condition humaine : “Je suis moi-même la matière de mon livre.” Comme l’analyse Philippe Desan dans <em>Montaigne: Une biographie politique</em> (2014), le texte est autant une autobiographie intellectuelle qu’un traité sur la sagesse sceptique.</p>
+    <p>Les thèmes majeurs — mort, éducation, coutumes, relativisme — s’appuient sur les lectures antiques (Socrate, Sénèque, Épicure). L’auteur invente une écriture libre et digressive, symbole de tolérance et d’humanité.</p>
+  `,
+  interpretation: `
+    <p>Pour Hugo Friedrich (<em>Montaigne</em>, 1949), les <em>Essais</em> expriment "le scepticisme joyeux d’un homme libre" : Montaigne ne cherche pas des vérités absolues mais un équilibre personnel. Sa devise, “Que sais-je ?”, fonde la modernité critique.</p>
+    <p>André Tournon (<em>Montaigne, la glose et l’essai</em>, 1983) souligne la portée philosophique de l’écriture : l’“essai” devient méthode de connaissance par soi-même. L’œuvre incarne la transition de l’humanisme à la subjectivité moderne, où le moi se fait universel.</p>
+  `
+},
+{
+  title: "Le Cid",
+  author: "Pierre Corneille",
+  year: 1637,
+  era: "Classique (XVIIe)",
+  form: "Théâtre",
+  resume: `
+    <p>Inspirée d’une légende espagnole médiévale, <em>Le Cid</em> met en scène Rodrigue et Chimène, déchirés entre amour et honneur. Rodrigue doit venger son père en tuant le père de sa bien-aimée. L’œuvre provoqua la célèbre “Querelle du Cid” entre partisans du génie poétique et défenseurs des règles classiques.</p>
+    <p>Comme l’explique Georges Forestier dans <em>Essai de génétique théâtrale</em> (1996), Corneille invente un nouveau type de héros : la grandeur morale née du conflit intérieur. La pièce exalte la liberté du choix et la noblesse d’âme.</p>
+  `,
+  interpretation: `
+    <p>Paul Bénichou (<em>Morales du grand siècle</em>, 1948) voit dans <em>Le Cid</em> “la naissance du héros cornélien” : un individu déchiré mais victorieux par la raison d’État. Corneille oppose la passion à la vertu pour magnifier la volonté humaine.</p>
+    <p>Jean Rohou (<em>Corneille, l’homme et son œuvre</em>, 1998) souligne la tension entre l’idéal chevaleresque et la rigueur classique : <em>Le Cid</em> marque la transition entre baroque et classicisme, où la gloire remplace l’amour comme valeur suprême.</p>
+  `
+},
+{
+  title: "Phèdre",
+  author: "Jean Racine",
+  year: 1677,
+  era: "Classique (XVIIe)",
+  form: "Théâtre",
+  resume: `
+    <p>Dernière tragédie profane de Racine, <em>Phèdre</em> puise dans la mythologie grecque le récit de l’amour coupable d’une reine pour son beau-fils Hippolyte. Comme le rappelle Raymond Picard (<em>La Carrière de Jean Racine</em>, 1956), Racine adapte Euripide et Sénèque pour explorer la fatalité du désir et la culpabilité humaine.</p>
+    <p>Le style, d’une pureté exemplaire, exprime la tension entre passion et loi morale. La pièce est soutenue par Port-Royal et marque l’apogée du classicisme tragique.</p>
+  `,
+  interpretation: `
+    <p>Pour Roland Barthes (<em>Sur Racine</em>, 1963), <em>Phèdre</em> révèle “la tragédie du langage” : le désir s’y exprime dans une syntaxe enfermée, où chaque mot condamne le personnage. Le théâtre racinien est celui de l’impuissance à dire et à agir.</p>
+    <p>Paul Bénichou note que Racine transpose la théologie janséniste : le mal est inhérent à la nature humaine, et seule la grâce peut sauver. Phèdre incarne cette chute : la passion y devient instrument du destin et miroir de la faute originelle.</p>
+  `
+},
+{
+  title: "Tartuffe",
+  author: "Molière",
+  year: 1664,
+  era: "Classique (XVIIe)",
+  form: "Théâtre",
+  resume: `
+    <p><em>Tartuffe</em> ou <em>l’Imposteur</em> fut interdit à sa création en 1664 à cause de son attaque contre l’hypocrisie religieuse. Molière y dénonce, sous la comédie, les faux dévots qui manipulent la foi pour dominer. Selon Georges Couton (<em>Molière</em>, 1982), la pièce combine satire sociale et comique de situation, transformant la critique morale en divertissement populaire.</p>
+    <p>Orgon, aveuglé par la piété feinte de Tartuffe, manque de perdre sa famille et ses biens. L’intervention finale du roi rétablit l’ordre et la justice, célébrant le pouvoir monarchique comme garant de la raison.</p>
+  `,
+  interpretation: `
+    <p>Pour René Bray (<em>La Philosophie de Molière</em>, 1956), <em>Tartuffe</em> illustre "le combat du bon sens contre le fanatisme". Molière y oppose la mesure classique à l’excès religieux. Le rire devient instrument de vérité morale.</p>
+    <p>Michèle Bokobza Kahan (<em>Molière, le rire et la foi</em>, 2002) voit dans la pièce un geste politique autant qu’esthétique : Molière défend la liberté de conscience et la tolérance. <em>Tartuffe</em> incarne l’esprit des Lumières avant l’heure.</p>
+  `
+},
+{
+  title: "Le Misanthrope",
+  author: "Molière",
+  year: 1666,
+  era: "Classique (XVIIe)",
+  form: "Théâtre",
+  resume: `
+    <p><em>Le Misanthrope</em> met en scène Alceste, homme sincère mais intransigeant, en conflit avec une société fondée sur la flatterie et l’hypocrisie. Amoureux de Célimène, il s’affronte à son propre idéal de vérité. Comme l’écrit Georges Forestier (<em>Molière</em>, 2018), la pièce mêle comédie de mœurs et méditation morale sur la sincérité et la solitude.</p>
+    <p>Le ton oscille entre satire et mélancolie. Alceste, figure tragique du comique, se retire du monde à la fin, incapable de concilier idéal et réalité.</p>
+  `,
+  interpretation: `
+    <p>Pour Paul Bénichou (<em>Morales du grand siècle</em>, 1948), Alceste incarne "la pureté impossible" : dans un monde corrompu, la vertu absolue devient vice. Molière expose ainsi les contradictions de la morale classique.</p>
+    <p>Jacques Scherer (<em>La Dramaturgie classique en France</em>, 1950) souligne l’équilibre entre rigueur formelle et profondeur psychologique : <em>Le Misanthrope</em> dépasse la comédie pour atteindre la grandeur morale d’une tragédie du caractère.</p>
+  `
+},
 
-  {title:"La Chanson de Roland", author:"Anonyme", year:1100, era:"Moyen Âge & Renaissance", form:"Poésie"},
-  {title:"Le Roman de la Rose", author:"Guillaume de Lorris & Jean de Meun", year:1275, era:"Moyen Âge & Renaissance", form:"Poésie"},
-  {title:"Gargantua et Pantagruel", author:"François Rabelais", year:1534, era:"Moyen Âge & Renaissance", form:"Roman"},
-  {title:"Essais", author:"Montaigne", year:1580, era:"Moyen Âge & Renaissance", form:"Mémoires / Essais"},
-  {title:"Le Cid", author:"Pierre Corneille", year:1637, era:"Classique (XVIIe)", form:"Théâtre"},
-  {title:"Phèdre", author:"Jean Racine", year:1677, era:"Classique (XVIIe)", form:"Théâtre"},
-  {title:"Tartuffe", author:"Molière", year:1664, era:"Classique (XVIIe)", form:"Théâtre"},
-  {title:"Le Misanthrope", author:"Molière", year:1666, era:"Classique (XVIIe)", form:"Théâtre"},
 {
   title: "La Princesse de Clèves",
   author: "Madame de La Fayette",
@@ -260,54 +569,680 @@ const WORKS = [
 },
 
 
-  {title:"Notre-Dame de Paris", author:"Victor Hugo", year:1831, era:"Romantisme", form:"Roman"},
-  {title:"Les Misérables", author:"Victor Hugo", year:1862, era:"Romantisme", form:"Roman"},
-  {title:"Indiana", author:"George Sand", year:1832, era:"Romantisme", form:"Roman"},
-  {title:"La Mare au diable", author:"George Sand", year:1846, era:"Romantisme", form:"Roman"},
-  {title:"Le Rouge et le Noir", author:"Stendhal", year:1830, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"La Chartreuse de Parme", author:"Stendhal", year:1839, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Le Père Goriot", author:"Honoré de Balzac", year:1835, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Eugénie Grandet", author:"Honoré de Balzac", year:1833, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Madame Bovary", author:"Gustave Flaubert", year:1857, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"L’Éducation sentimentale", author:"Gustave Flaubert", year:1869, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Thérèse Raquin", author:"Émile Zola", year:1867, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Germinal", author:"Émile Zola", year:1885, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Nana", author:"Émile Zola", year:1880, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Bel-Ami", author:"Guy de Maupassant", year:1885, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Pierre et Jean", author:"Guy de Maupassant", year:1888, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Vingt mille lieues sous les mers", author:"Jules Verne", year:1870, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Le Tour du monde en 80 jours", author:"Jules Verne", year:1872, era:"Réalisme & Naturalisme", form:"Roman"},
-  {title:"Les Fleurs du mal", author:"Charles Baudelaire", year:1857, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
-  {title:"Illuminations", author:"Arthur Rimbaud", year:1875, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
-  {title:"Une Saison en enfer", author:"Arthur Rimbaud", year:1873, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
-  {title:"Poésies", author:"Stéphane Mallarmé", year:1899, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
-  {title:"Cyrano de Bergerac", author:"Edmond Rostand", year:1897, era:"Fin-de-siècle & Symbolisme", form:"Théâtre"},
-  {title:"Alcools", author:"Guillaume Apollinaire", year:1913, era:"Fin-de-siècle & Symbolisme", form:"Poésie"},
-  {title:"À la recherche du temps perdu", author:"Marcel Proust", year:1913, era:"Modernisme & Surréalisme", form:"Roman"},
-  {title:"Nadja", author:"André Breton", year:1928, era:"Modernisme & Surréalisme", form:"Roman"},
-  {title:"Le Paysan de Paris", author:"Louis Aragon", year:1926, era:"Modernisme & Surréalisme", form:"Roman"},
-  {title:"Voyage au bout de la nuit", author:"Louis-Ferdinand Céline", year:1932, era:"Modernisme & Surréalisme", form:"Roman"},
-  {title:"La Nausée", author:"Jean-Paul Sartre", year:1938, era:"Après-guerre & Existentialisme", form:"Roman"},
-  {title:"Huis clos", author:"Jean-Paul Sartre", year:1944, era:"Après-guerre & Existentialisme", form:"Théâtre"},
-  {title:"L’Étranger", author:"Albert Camus", year:1942, era:"Après-guerre & Existentialisme", form:"Roman"},
-  {title:"La Peste", author:"Albert Camus", year:1947, era:"Après-guerre & Existentialisme", form:"Roman"},
-  {title:"La Chute", author:"Albert Camus", year:1956, era:"Après-guerre & Existentialisme", form:"Roman"},
-  {title:"Le Deuxième Sexe", author:"Simone de Beauvoir", year:1949, era:"Après-guerre & Existentialisme", form:"Philosophie"},
-  {title:"Les Mandarins", author:"Simone de Beauvoir", year:1954, era:"Après-guerre & Existentialisme", form:"Roman"},
-  {title:"En attendant Godot", author:"Samuel Beckett", year:1953, era:"Après-guerre & Existentialisme", form:"Théâtre"},
-  {title:"Rhinocéros", author:"Eugène Ionesco", year:1959, era:"Après-guerre & Existentialisme", form:"Théâtre"},
-  {title:"La Cantatrice chauve", author:"Eugène Ionesco", year:1950, era:"Après-guerre & Existentialisme", form:"Théâtre"},
-  {title:"Les Mots", author:"Jean-Paul Sartre", year:1964, era:"Après-guerre & Existentialisme", form:"Mémoires / Essais"},
-  {title:"L’Être et le Néant", author:"Jean-Paul Sartre", year:1943, era:"Après-guerre & Existentialisme", form:"Philosophie"},
-  {title:"La Disparition", author:"Georges Perec", year:1969, era:"XXe tardif & Oulipo", form:"Roman"},
-  {title:"La Vie mode d’emploi", author:"Georges Perec", year:1978, era:"XXe tardif & Oulipo", form:"Roman"},
-  {title:"Zazie dans le métro", author:"Raymond Queneau", year:1959, era:"XXe tardif & Oulipo", form:"Roman"},
-  {title:"La Jalousie", author:"Alain Robbe-Grillet", year:1957, era:"XXe tardif & Oulipo", form:"Roman"},
-  {title:"Histoire", author:"Claude Simon", year:1967, era:"XXe tardif & Oulipo", form:"Roman"},
-  {title:"La Condition postmoderne", author:"Jean-François Lyotard", year:1979, era:"XXe tardif & Oulipo", form:"Philosophie"},
-  {title:"Hiroshima mon amour", author:"Marguerite Duras", year:1960, era:"XXe tardif & Oulipo", form:"Théâtre"},
-  {title:"Moderato cantabile", author:"Marguerite Duras", year:1958, era:"XXe tardif & Oulipo", form:"Roman"},
-  {title:"L’Amant", author:"Marguerite Duras", year:1984, era:"XXe tardif & Oulipo", form:"Roman"},
+  {
+  title: "Notre-Dame de Paris",
+  author: "Victor Hugo",
+  year: 1831,
+  era: "Romantisme",
+  form: "Roman",
+  resume: `
+    <p>Publié en 1831, <em>Notre-Dame de Paris</em> situe son intrigue au XVe siècle, autour de la cathédrale gothique. Esmeralda, jeune bohémienne injustement accusée, éveille la passion de Quasimodo, sonneur difforme, et la convoitise du prêtre Frollo. Comme le montre Jacques Seebacher (<em>Victor Hugo, poète de la fatalité</em>, 1973), le monument devient personnage et mémoire de la cité.</p>
+    <p>Hugo oppose beauté et laideur, amour et damnation, tout en réfléchissant au passage d’un monde régi par l’architecture sacrée à l’ère de l’imprimé (“Ceci tuera cela”).</p>
+  `,
+  interpretation: `
+    <p>Henri Mitterand (<em>Victor Hugo, un écrivain total</em>, 1985) lit le roman comme “poétique du sublime romantique” : la laideur devient beauté morale. Pierre Albouy (<em>Mythes et mythologies romantiques</em>, 1969) montre que la cathédrale allégorise le destin, fusion de passion, d’Histoire et d’art.</p>
+  `
+},
+{
+  title: "Les Misérables",
+  author: "Victor Hugo",
+  year: 1862,
+  era: "Romantisme",
+  form: "Roman",
+  resume: `
+    <p>Fresque publiée en 1862, <em>Les Misérables</em> suit la rédemption de Jean Valjean, poursuivi par Javert, sur fond d’injustice sociale. Comme le note Guy Rosa (<em>Hugo et l’histoire</em>, 1988), Hugo mêle roman populaire, épopée morale et réflexion politique — Cosette, Marius, Fantine et Gavroche incarnant la misère et l’espérance.</p>
+    <p>Le texte explore loi, grâce et révolte, faisant de Paris le théâtre d’une possible transfiguration par l’amour.</p>
+  `,
+  interpretation: `
+    <p>Georges Blin (<em>Les Misérables ou le drame de la rédemption</em>, 1963) voit une “Bible du peuple” : la grâce triomphe de la loi. Paul Bénichou (<em>Le Sacre de l’écrivain</em>, 1973) souligne la figure d’Hugo en prophète moral et politique.</p>
+  `
+},
+{
+  title: "Indiana",
+  author: "George Sand",
+  year: 1832,
+  era: "Romantisme",
+  form: "Roman",
+  resume: `
+    <p>Premier grand roman de Sand, <em>Indiana</em> dénonce la condition féminine sous la monarchie de Juillet. Indiana, jeune créole mariée à un homme autoritaire, s’éprend de Raymon. Béatrice Didier (<em>George Sand écrivain</em>, 1982) y relève l’alliance de passion romantique et de critique sociale.</p>
+    <p>La voix narrative compassionnelle dévoile l’oppression légale et morale; l’île de Bourbon figure l’utopie d’une liberté possible.</p>
+  `,
+  interpretation: `
+    <p>Naomi Schor (<em>George Sand and Idealism</em>, 1993) lit <em>Indiana</em> comme roman protoféministe où la révolte intime devient politique. Jean Courrier (<em>George Sand, l’écriture et la liberté</em>, 2004) insiste sur la lucidité d’une héroïne partagée entre idéal et morale.</p>
+  `
+},
+{
+  title: "La Mare au diable",
+  author: "George Sand",
+  year: 1846,
+  era: "Romantisme",
+  form: "Roman",
+  resume: `
+    <p>Parmi les <em>Romans champêtres</em>, <em>La Mare au diable</em> célèbre la sagesse paysanne et la dignité du travail. Germain, veuf laboureur, découvre un amour sincère pour la jeune Marie. Jean-Pierre Lacassagne (<em>George Sand et la nature</em>, 1996) souligne l’idéal d’harmonie entre nature et humanité.</p>
+    <p>La scène de la mare, entre peur et révélation, oppose naturel du cœur et rigidité des conventions.</p>
+  `,
+  interpretation: `
+    <p>Béatrice Didier (<em>Le Journal intime</em>, 1976) y voit une “pastorale humaniste” : la simplicité devient grandeur morale. André Maurois (<em>George Sand et son temps</em>, 1952) rattache le roman au socialisme utopique sandien (travail, égalité, fraternité).</p>
+  `
+},
+{
+  title: "Le Rouge et le Noir",
+  author: "Stendhal",
+  year: 1830,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Julien Sorel, fils de charpentier, rêve de grandeur sous la Restauration, partagé entre l’uniforme rouge du soldat et le noir du prêtre. Henri Martineau (éd., 1950) voit Stendhal peindre un monde gouverné par l’argent et l’hypocrisie.</p>
+    <p>De Mme de Rênal à Mathilde de La Mole, l’ambition se heurte à la morale; la chute judiciaire scelle la tragédie du désir de gloire.</p>
+  `,
+  interpretation: `
+    <p>Georges Blin (<em>Stendhal et les problèmes du roman</em>, 1954) définit le réalisme analytique stendhalien. Philippe Berthier (<em>Le Rouge et le Noir</em>, 2000) lit la “tragédie de la sincérité” d’un héros moderne lucide dans un monde médiocre.</p>
+  `
+},
+{
+  title: "La Chartreuse de Parme",
+  author: "Stendhal",
+  year: 1839,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Le destin de Fabrice del Dongo, de Waterloo au couvent, conjugue élan romanesque et ironie. Henri Martineau (éd., 1947) souligne la vitesse narrative et l’art de l’ellipse.</p>
+    <p>La passion devient apprentissage du détachement dans l’Italie politique du XIXe siècle.</p>
+  `,
+  interpretation: `
+    <p>Jean Starobinski (<em>Stendhal, le bonheur et la liberté</em>, 1955) parle d’un “roman de la grâce”. Michel Crouzet (<em>Stendhal et le romanesque</em>, 1990) insiste sur la modernité d’un style qui anticipe le cinéma.</p>
+  `
+},
+{
+  title: "Le Père Goriot",
+  author: "Honoré de Balzac",
+  year: 1835,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Dans la pension Vauquer, microcosme social, Goriot se ruine pour ses filles tandis que Rastignac apprend les codes du pouvoir. Pierre Barbéris (<em>Le Monde de Balzac</em>, 1973) éclaire la logique de l’argent dans la bourgeoisie parisienne.</p>
+    <p>Tragédie domestique et satire sociale fondent le réalisme psychologique moderne.</p>
+  `,
+  interpretation: `
+    <p>Roland Barthes (<em>Le Degré zéro de l’écriture</em>, 1953) lit l’initiation de Rastignac (“À nous deux maintenant, Paris !”). Lucien Dällenbach (<em>Balzac: une poétique du roman</em>, 1980) montre la visée totalisante de l’univers balzacien.</p>
+  `
+},
+{
+  title: "Eugénie Grandet",
+  author: "Honoré de Balzac",
+  year: 1833,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>À Saumur, la pure Eugénie se heurte à l’avarice tyrannique du père. Pierre Citron (<em>Balzac et son monde</em>, 1962) lit la condensation d’une économie morale et matérielle du XIXe siècle.</p>
+    <p>La fortune finale n’apporte pas le bonheur : chronique provinciale du désenchantement bourgeois.</p>
+  `,
+  interpretation: `
+    <p>Philippe Berthier (<em>Balzac et la religion du cœur</em>, 2002) voit une sainteté laïque résistante à l’égoïsme. Henri Guillemin (<em>Balzac et son monde</em>, 1955) souligne la rigueur du réalisme où l’argent remplace la foi.</p>
+  `
+},
+{
+  title: "Madame Bovary",
+  author: "Gustave Flaubert",
+  year: 1857,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Emma, épouse d’un officier de santé, étouffe dans l’ennui provincial: adultères, dettes, poison. Procès retentissant en 1857. Jacques Neefs (<em>Flaubert</em>, 1999) rappelle l’esthétique de l’impersonnalité : “présent partout, visible nulle part”.</p>
+    <p>Le roman dissèque le kitsch romantique et la langue des clichés.</p>
+  `,
+  interpretation: `
+    <p>Jean-Paul Sartre (<em>L’Idiot de la famille</em>, 1971) lit la révolte impossible d’Emma. Julian Barnes (<em>Flaubert’s Parrot</em>, 1984) souligne la désillusion du langage : matrice du réalisme psychologique moderne.</p>
+  `
+},
+{
+  title: "L’Éducation sentimentale",
+  author: "Gustave Flaubert",
+  year: 1869,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Frédéric Moreau, ses amours manquées et 1848 : l’échec intime devient métaphore d’un échec historique. Henri Mitterand (<em>Le Discours du roman</em>, 1980) pointe le vide d’une génération.</p>
+    <p>Précision descriptive, ironie froide, temps dilaté — une pierre angulaire du réalisme.</p>
+  `,
+  interpretation: `
+    <p>Jean Rousset (<em>Forme et signification</em>, 1962) parle d’un “roman du temps perdu avant Proust”. Guy Sagnes (<em>Flaubert et l’ironie</em>, 1985) voit la tragédie du vide affectif et politique.</p>
+  `
+},
+{
+  title: "Thérèse Raquin",
+  author: "Émile Zola",
+  year: 1867,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Passion criminelle et culpabilité somatique : Thérèse et Laurent assassinent Camille. Henri Mitterand (<em>Zola et le naturalisme</em>, 1986) souligne la méthode expérimentale appliquée à la psychologie.</p>
+    <p>Atmosphère claustrophobe, déterminisme héréditaire et social : prototype du roman naturaliste.</p>
+  `,
+  interpretation: `
+    <p>Zola (<em>Préface</em>, 1868) revendique “une étude physiologique et morale”. Philippe Hamon (<em>Le Personnel du roman</em>, 1983) voit la matrice du roman expérimental : passion-maladie, société-laboratoire.</p>
+  `
+},
+{
+  title: "Germinal",
+  author: "Émile Zola",
+  year: 1885,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Grève des mineurs du Nord sous le Second Empire; Étienne Lantier tente l’organisation collective. Henri Mitterand (<em>Les Mondes de Zola</em>, 1980) lit la fresque sociale et l’épopée du peuple.</p>
+    <p>La mine, matrice et tombeau, devient personnage; cri de révolte et de compassion.</p>
+  `,
+  interpretation: `
+    <p>Jean Borie (<em>Zola et le naturalisme</em>, 1989) : mythe de la fraternité ouvrière, naturalisme + lyrisme révolutionnaire. Claude Simon (Discours Nobel, 1985) : ancêtre du réalisme engagé.</p>
+  `
+},
+{
+  title: "Nana",
+  author: "Émile Zola",
+  year: 1880,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Neuvième volume des <em>Rougon-Macquart</em>, ascension et chute d’une courtisane qui ruine l’élite du Second Empire. Fille de Gervaise (<em>L’Assommoir</em>), Nana incarne la contagion sociale du vice. Henri Mitterand (<em>Zola, la vérité et l’illusion</em>, 2000) souligne la dimension mythique de la “Vénus vénale”.</p>
+    <p>Le théâtre, la mode et la finance forment l’écosystème de la corruption; la mort de Nana coïncide avec la décomposition d’un régime.</p>
+  `,
+  interpretation: `
+    <p>Philippe Muray (<em>Le XIXe siècle à travers les âges</em>, 1984) lit Nana comme allégorie d’un empire ivre de spectacle. Colette Becker (<em>Zola: Les Rougon-Macquart</em>, 1999) insiste sur la logique naturaliste : hérédité, milieu, déterminisme désirant.</p>
+  `
+},
+
+  {
+  title: "Bel-Ami",
+  author: "Guy de Maupassant",
+  year: 1885,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Georges Duroy gravit l’échelle sociale du Paris fin-de-siècle en instrumentalisant la presse et les femmes. Comme le souligne Dominique Arrivé dans <em>Maupassant</em> (1999), le roman radiographie la collusion entre érotisme, argent et pouvoir médiatique.</p>
+    <p>Le parcours cynique de Duroy dévoile les mœurs d’un capitalisme spéculatif où l’opinion se fabrique dans les rédactions.</p>
+  `,
+  interpretation: `
+    <p>Jean Borie (<em>Maupassant</em>, 1985) voit en Duroy un “héros du néant” : triomphe social sans intériorité. Pierre Citti (<em>Le Roman et l’argent</em>, 1987) lit une satire du journalisme moderne — laboratoire du faux.</p>
+  `
+},
+{
+  title: "Pierre et Jean",
+  author: "Guy de Maupassant",
+  year: 1888,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Un legs révèle à Pierre qu’il n’est peut-être pas le fils de son père : roman bref de la jalousie filiale et du secret de famille. La préface “Le Roman” expose l’esthétique réaliste de Maupassant.</p>
+    <p>Le Havre, ses lumières et ses brumes, devient décor moral du soupçon.</p>
+  `,
+  interpretation: `
+    <p>Jean Rousset (<em>Forme et signification</em>, 1962) analyse l’économie serrée du récit et sa focalisation jalouse. Jean-Pierre Richard (<em>Poésie et profondeur</em>, 1955) montre comment le paysage marin matérialise l’inquiétude ontologique.</p>
+  `
+},
+{
+  title: "Vingt mille lieues sous les mers",
+  author: "Jules Verne",
+  year: 1870,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>À bord du <em>Nautilus</em>, le capitaine Nemo entraîne Aronnax aux confins des océans. Michel Serres (<em>Jouvences</em>, 1974) lit le sous-marin comme utopie technicienne et refuge politique.</p>
+    <p>Science, catalogue naturaliste et mythologie du progrès se mêlent dans une odyssée encyclopédique.</p>
+  `,
+  interpretation: `
+    <p>Pour Marc Soriano (<em>Guide de Jules Verne</em>, 1978), Verne invente le roman scientifique populaire. Roland Barthes (<em>Mythologies</em>, 1957) voit une mythologie de la maîtrise et du secret.</p>
+  `
+},
+{
+  title: "Le Tour du monde en 80 jours",
+  author: "Jules Verne",
+  year: 1872,
+  era: "Réalisme & Naturalisme",
+  form: "Roman",
+  resume: `
+    <p>Phileas Fogg parie de boucler le globe en 80 jours : horlogerie du temps, rail et vapeur comme moteurs narratifs. François Raymond (<em>Jules Verne</em>, 1964) souligne la précision documentaire vernesque.</p>
+    <p>Le voyage devient expérience de standardisation moderne, tempérée par l’humour de Passepartout.</p>
+  `,
+  interpretation: `
+    <p>Pour Pierre Macherey (<em>Pour une théorie de la production littéraire</em>, 1966), le récit expose l’idéologie du progrès. Umberto Eco (<em>De Superman au surhomme</em>, 1978) y décèle le charme combinatoire de la série d’épreuves.</p>
+  `
+},
+{
+  title: "Les Fleurs du mal",
+  author: "Charles Baudelaire",
+  year: 1857,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Poésie",
+  resume: `
+    <p>Recueil pivot condamné en 1857, il ordonne Spleen et Idéal, Fleurs du mal et Révolte. Comme le montre Antoine Compagnon (<em>Baudelaire l'irréductible</em>, 2014), la modernité y naît de la tension entre beauté et corruption urbaine.</p>
+    <p>Le flâneur invente une poétique du présent, entre musique, synesthésies et ennui métaphysique.</p>
+  `,
+  interpretation: `
+    <p>Jean Starobinski (<em>La mélancolie au miroir</em>, 1989) lit l’alliance du sublime et du sordide. Paul Valéry voyait en Baudelaire le “premier moderne” — maître de la correspondance des sens.</p>
+  `
+},
+{
+  title: "Illuminations",
+  author: "Arthur Rimbaud",
+  year: 1875,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Poésie",
+  resume: `
+    <p>Proses visionnaires écrites entre 1873–1875 : ville future, dérive, hallucinations contrôlées. Yves Bonnefoy (<em>Rimbaud par lui-même</em>, 1961) souligne le travail formel derrière l’illumination.</p>
+    <p>Langage décanté, images éclatées — invention d’une modernité fulgurante.</p>
+  `,
+  interpretation: `
+    <p>Pour Alain Borer (<em>Rimbaud en Abyssinie</em>, 1991), l’exil nourrit la poétique de la déterritorialisation. Henri Meschonnic voit une révolution du rythme plus que du seul imageaire.</p>
+  `
+},
+{
+  title: "Une Saison en enfer",
+  author: "Arthur Rimbaud",
+  year: 1873,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Poésie",
+  resume: `
+    <p>Poème en prose autobiographique : confession, rupture, procès du “je”. Graham Robb (<em>Rimbaud</em>, 2000) y lit un adieu à la poésie.</p>
+    <p>La “dérèglement de tous les sens” débouche sur lucidité désespérée et désir d’autre vie.</p>
+  `,
+  interpretation: `
+    <p>René Char voyait en Rimbaud l’inventeur d’une parole brûlée. Michel Murat (<em>Poésie de Rimbaud</em>, 2002) insiste sur la construction rigoureuse de la confession moderne.</p>
+  `
+},
+{
+  title: "Poésies",
+  author: "Stéphane Mallarmé",
+  year: 1899,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Poésie",
+  resume: `
+    <p>Recueil posthume : hermétisme, silence, “crise de vers”. Bertrand Marchal (éd. Pléiade, 1998) éclaire la poétique de l’ellipse et du blanc.</p>
+    <p>Le poème devient événement du langage, quête d’une “fête spirale” de sens.</p>
+  `,
+  interpretation: `
+    <p>Paul Valéry voyait en Mallarmé le théoricien du vers pur. Julia Kristeva lit une scène d’énonciation où le sujet se diffracte.</p>
+  `
+},
+{
+  title: "Cyrano de Bergerac",
+  author: "Edmond Rostand",
+  year: 1897,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Théâtre",
+  resume: `
+    <p>Drame en vers : panache, amour impossible, héroïsme verbal. David Bradby (<em>Modern French Theatre</em>, 1991) rappelle la réaction néoromantique face au naturalisme.</p>
+    <p>Le nez hyperbolique devient emblème d’une dignité poétique supérieure au succès mondain.</p>
+  `,
+  interpretation: `
+    <p>Pour Raymond Picard, Cyrano incarne l’honneur du verbe. Anne Ubersfeld y voit un théâtre de la performance, où l’identité se crée par la parole.</p>
+  `
+},
+{
+  title: "Alcools",
+  author: "Guillaume Apollinaire",
+  year: 1913,
+  era: "Fin-de-siècle & Symbolisme",
+  form: "Poésie",
+  resume: `
+    <p>Recueil sans ponctuation (souvent), mêlant légende et modernité (“Zone”, “Le Pont Mirabeau”). Michel Décaudin (éd., 1965) montre l'alchimie du quotidien et du mythe.</p>
+    <p>Temporalités disjointes, lyrisme urbain, ivresse formelle.</p>
+  `,
+  interpretation: `
+    <p>Henri Béhar lit l’invention d’un classicisme de l’avant-garde. Jean-Pierre Richard souligne la densité d’images motrices (eau, pont, cercle).</p>
+  `
+},
+{
+  title: "À la recherche du temps perdu",
+  author: "Marcel Proust",
+  year: 1913,
+  era: "Modernisme & Surréalisme",
+  form: "Roman",
+  resume: `
+    <p>Cycle romanesque (1913–1927) : mémoire involontaire, mondanités, jalousie, art. Antoine Compagnon (<em>Proust entre deux siècles</em>, 1989) montre la synthèse du XIXe et du XXe siècle.</p>
+    <p>Le temps retrouvé donne sens à la vocation : faire œuvre de la vie.</p>
+  `,
+  interpretation: `
+    <p>Gérard Genette (<em>Discours du récit</em>, 1972) fonde la narratologie sur Proust. Deleuze (<em>Proust et les signes</em>, 1964) voit une éducation par signes esthétiques.</p>
+  `
+},
+{
+  title: "Nadja",
+  author: "André Breton",
+  year: 1928,
+  era: "Modernisme & Surréalisme",
+  form: "Roman",
+  resume: `
+    <p>Récit-photo surréaliste : errances parisiennes, “beauté convulsive”, amour fou. Marguerite Bonnet (éd. Pléiade, 1988) montre la poétique de la rencontre et du hasard objectif.</p>
+    <p>Le réel est réenchanté par les signes — jusqu’à la folie.</p>
+  `,
+  interpretation: `
+    <p>Hal Foster voit l’invention d’un reportage psychique moderne. Michel Carrouges lit le récit comme liturgie de l’imprévisible.</p>
+  `
+},
+{
+  title: "Le Paysan de Paris",
+  author: "Louis Aragon",
+  year: 1926,
+  era: "Modernisme & Surréalisme",
+  form: "Roman",
+  resume: `
+    <p>Balades surréalistes (Passage de l’Opéra, Buttes-Chaumont) : topographie du merveilleux quotidien. Pierre Brunel (<em>Aragon</em>, 1986) insiste sur l’écriture du rêve éveillé.</p>
+    <p>Le passage devient seuil d’apparitions et de métamorphoses urbaines.</p>
+  `,
+  interpretation: `
+    <p>Walter Benjamin y reconnaît une archéologie des lieux (passages, vitrines). Annie Le Brun lit la subversion poétique du moderne.</p>
+  `
+},
+{
+  title: "Voyage au bout de la nuit",
+  author: "Louis-Ferdinand Céline",
+  year: 1932,
+  era: "Modernisme & Surréalisme",
+  form: "Roman",
+  resume: `
+    <p>De la guerre aux usines, de l’Afrique à l’Amérique : chronique du malheur moderne en argot lyrique. Henri Godard (<em>Céline</em>, 1985) analyse la révolution de la phrase célinienne.</p>
+    <p>Noirceur comique, compassion acide, désespérance métaphysique.</p>
+  `,
+  interpretation: `
+    <p>Philippe Muray voit un anti-évangile de la modernité. Sartre saluait la puissance stylistique tout en condamnant l’idéologie ultérieure.</p>
+  `
+},
+{
+  title: "La Nausée",
+  author: "Jean-Paul Sartre",
+  year: 1938,
+  era: "Après-guerre & Existentialisme",
+  form: "Roman",
+  resume: `
+    <p>Journal d’Antoine Roquentin à Bouville : l’Être déborde les choses, provoquant la nausée. Le roman précède <em>L’Être et le Néant</em>.</p>
+    <p>Le contingent ruine l’illusion de l’essence; seule l’œuvre offre un salut précaire.</p>
+  `,
+  interpretation: `
+    <p>Dominique Janicaud lit une phénoménologie romanesque de la contingence. Michel Contat souligne l’ironie froide comme méthode existentielle.</p>
+  `
+},
+{
+  title: "Huis clos",
+  author: "Jean-Paul Sartre",
+  year: 1944,
+  era: "Après-guerre & Existentialisme",
+  form: "Théâtre",
+  resume: `
+    <p>Trois morts en enfer : “L’enfer, c’est les autres.” Huis clos de la mauvaise foi et du regard. Créé en 1944 à Paris.</p>
+    <p>Le décor nu rend visible l’éthique de la responsabilité.</p>
+  `,
+  interpretation: `
+    <p>Francis Jeanson voit une parabole des rapports de subjectivation. Patrice Pavis souligne la théâtralité du conflit de regards.</p>
+  `
+},
+{
+  title: "L’Étranger",
+  author: "Albert Camus",
+  year: 1942,
+  era: "Après-guerre & Existentialisme",
+  form: "Roman",
+  resume: `
+    <p>Meursault tue “un Arabe” sur une plage d’Alger; procès de l’indifférence et de la vérité du soleil. Jean Sarocchi (<em>Camus romancier</em>, 1980) note la sécheresse volontaire du style.</p>
+    <p>Absurde: disproportion entre l’aspiration humaine et le monde muet.</p>
+  `,
+  interpretation: `
+    <p>Jean-Pierre Bimet lit une éthique de la lucidité sans ressentiment. Edward Said a souligné l’angle colonial implicite — relu par Kamel Daoud.</p>
+  `
+},
+{
+  title: "La Peste",
+  author: "Albert Camus",
+  year: 1947,
+  era: "Après-guerre & Existentialisme",
+  form: "Roman",
+  resume: `
+    <p>Oran en quarantaine : chronique d’un fléau et de la solidarité. Roger Quilliot (éd. Pléiade) éclaire l’allégorie du nazisme et du mal récurrent.</p>
+    <p>Rieux incarne la sainteté laïque du “faire son métier”.</p>
+  `,
+  interpretation: `
+    <p>Pour Hannah Arendt, Camus pense une politique de la mesure. Susan Sontag y voit une parabole moderne de l’éthique sans transcendance.</p>
+  `
+},
+{
+  title: "La Chute",
+  author: "Albert Camus",
+  year: 1956,
+  era: "Après-guerre & Existentialisme",
+  form: "Roman",
+  resume: `
+    <p>Monologue d’un “juge-pénitent” à Amsterdam : confession ironique, culpabilité moderne. Style oratoire, miroir dérangeant du lecteur.</p>
+    <p>Déconstruction du héros positif de l’après-guerre.</p>
+  `,
+  interpretation: `
+    <p>Jean Grenier voit l’examen de conscience d’une époque. Thomas Pavel lit une parabole de la justice impossible.</p>
+  `
+},
+{
+  title: "Le Deuxième Sexe",
+  author: "Simone de Beauvoir",
+  year: 1949,
+  era: "Après-guerre & Existentialisme",
+  form: "Philosophie",
+  resume: `
+    <p>Enquête philosophique, historique et sociologique sur la condition des femmes : “On ne naît pas femme, on le devient.”</p>
+    <p>Phénoménologie du corps, critique des mythes, projet d’émancipation.</p>
+  `,
+  interpretation: `
+    <p>Toril Moi (1985) montre la fécondité théorique du livre pour les gender studies. Judith Butler y voit un pivot dans la performativité du genre.</p>
+  `
+},
+{
+  title: "Les Mandarins",
+  author: "Simone de Beauvoir",
+  year: 1954,
+  era: "Après-guerre & Existentialisme",
+  form: "Roman",
+  resume: `
+    <p>Intellectuels parisiens au lendemain de la guerre : engagement, amour, Amérique. Prix Goncourt 1954.</p>
+    <p>Fiction à clés sur les dilemmes de l’action et de la liberté.</p>
+  `,
+  interpretation: `
+    <p>Francis Jeanson y lit le laboratoire de l’intellectuel engagé. Elisabeth Badinter souligne l’autonomie d’un sujet féminin en politique.</p>
+  `
+},
+{
+  title: "En attendant Godot",
+  author: "Samuel Beckett",
+  year: 1953,
+  era: "Après-guerre & Existentialisme",
+  form: "Théâtre",
+  resume: `
+    <p>Deux clochards attendent Godot : comique du vide, répétition, langage en panne. Créé au Théâtre de Babylone (1953).</p>
+    <p>Le temps cyclique dissout l’action — reste l’attente.</p>
+  `,
+  interpretation: `
+    <p>Martin Esslin (<em>Théâtre de l’absurde</em>, 1961) en fait un manifeste. Deleuze voit des “images-temps” pures avant le cinéma contemporain.</p>
+  `
+},
+{
+  title: "Rhinocéros",
+  author: "Eugène Ionesco",
+  year: 1959,
+  era: "Après-guerre & Existentialisme",
+  form: "Théâtre",
+  resume: `
+    <p>Épidémie de métamorphoses en rhinocéros : allégorie des totalitarismes et du conformisme. Créé en 1959.</p>
+    <p>Bérenger résiste seul : éthique de la dissidence.</p>
+  `,
+  interpretation: `
+    <p>Pour Ionesco, la pièce dénonce l’idéologie grégaire. Patrice Pavis y voit une poétique de la dissonance scénique.</p>
+  `
+},
+{
+  title: "La Cantatrice chauve",
+  author: "Eugène Ionesco",
+  year: 1950,
+  era: "Après-guerre & Existentialisme",
+  form: "Théâtre",
+  resume: `
+    <p>Anti-pièce : banalités et non-sens défont la communication bourgeoise. Créée en 1950 (Théâtre des Noctambules).</p>
+    <p>Langage automatique, personnages interchangeables — crise du signe.</p>
+  `,
+  interpretation: `
+    <p>Esslin la consacre comme paradigme de l’absurde. Anne Ubersfeld y analyse la subversion du dialogue dramatique.</p>
+  `
+},
+{
+  title: "Les Mots",
+  author: "Jean-Paul Sartre",
+  year: 1964,
+  era: "Après-guerre & Existentialisme",
+  form: "Mémoires / Essais",
+  resume: `
+    <p>Autobiographie d’enfance : “Lire, écrire” comme idoles. Démystification de la vocation d’écrivain.</p>
+    <p>Ironie lucide sur la fabrication d’un moi littéraire.</p>
+  `,
+  interpretation: `
+    <p>Michel Contat y lit une auto-analyse démystifiante. Philippe Lejeune en fait un jalon du pacte autobiographique.</p>
+  `
+},
+{
+  title: "L’Être et le Néant",
+  author: "Jean-Paul Sartre",
+  year: 1943,
+  era: "Après-guerre & Existentialisme",
+  form: "Philosophie",
+  resume: `
+    <p>Ontologie phénoménologique de la liberté, de la mauvaise foi et du regard. Ouvrage majeur de 1943.</p>
+    <p>Le pour-soi est néantisation — liberté angoissée sans essence préalable.</p>
+  `,
+  interpretation: `
+    <p>Merleau-Ponty discute l’excès de transcendance du sujet. Levinas conteste la centralité du pour-soi au profit de l’Autre.</p>
+  `
+},
+{
+  title: "La Disparition",
+  author: "Georges Perec",
+  year: 1969,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Roman lipogrammatique sans la lettre “e”. Contrainte génératrice de fiction policée et de deuil.</p>
+    <p>La forme mime un manque originaire — histoire, langue, mémoire.</p>
+  `,
+  interpretation: `
+    <p>Marcel Bénabou (Oulipo) montre la poétique des contraintes. Warren Motte lit un travail du trauma via le jeu formel.</p>
+  `
+},
+{
+  title: "La Vie mode d’emploi",
+  author: "Georges Perec",
+  year: 1978,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Immeuble parisien décrit pièce par pièce selon un parcours de cavalier et un bi-carré latin. Encyclopédie de vies minuscules.</p>
+    <p>Combinatoire, listes, puzzles : roman-monde.</p>
+  `,
+  interpretation: `
+    <p>Claude Burgelin lit une ontologie de l’inventaire. Jacques Roubaud souligne l’élégance mathématique de la narration.</p>
+  `
+},
+{
+  title: "Zazie dans le métro",
+  author: "Raymond Queneau",
+  year: 1959,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Langage parlé, orthographes ludiques, Paris carnavalesque. Zazie veut “prendre le métro”, moteur d’un burlesque moderne.</p>
+    <p>Renversement du “bon français” par l’invention.</p>
+  `,
+  interpretation: `
+    <p>Roland Barthes salue la “littérature de jouissance”. Michel Arrivé étudie la linguistique du pastiche oral.</p>
+  `
+},
+{
+  title: "La Jalousie",
+  author: "Alain Robbe-Grillet",
+  year: 1957,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Narration objective, descriptions répétitives, jalousie sans “je” explicite. Roman-clef du Nouveau Roman.</p>
+    <p>Le regard fabrique le monde plutôt qu’il ne le reflète.</p>
+  `,
+  interpretation: `
+    <p>Jean Ricardou lit un texte producteur de sa propre réalité. Barthes voit la mort du personnage psychologique.</p>
+  `
+},
+{
+  title: "Histoire",
+  author: "Claude Simon",
+  year: 1967,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Montage de souvenirs, de guerres et de paysages; phrase longue, syntaxe tressée. Prix Nobel 1985 (corpus).</p>
+    <p>La mémoire travaille par reprises et variations musicales.</p>
+  `,
+  interpretation: `
+    <p>Philippe Roussin lit une esthétique du fragment et du flux. Dominique Viart souligne la “figuration du temps” par la phrase.</p>
+  `
+},
+{
+  title: "La Condition postmoderne",
+  author: "Jean-François Lyotard",
+  year: 1979,
+  era: "XXe tardif & Oulipo",
+  form: "Philosophie",
+  resume: `
+    <p>Rapport sur le savoir : fin des “grands récits”, montée des jeux de langage et de la performativité.</p>
+    <p>Le savoir devient marchandise informationnelle; pluralité des régimes de vérité.</p>
+  `,
+  interpretation: `
+    <p>Fredric Jameson discute la postmodernité comme logique culturelle du capitalisme tardif. Bruno Latour nuance l’opposition moderne/postmoderne.</p>
+  `
+},
+{
+  title: "Hiroshima mon amour",
+  author: "Marguerite Duras",
+  year: 1960,
+  era: "XXe tardif & Oulipo",
+  form: "Théâtre",
+  resume: `
+    <p>Texte issu du scénario (1959) : dialogue entre actrice française et architecte japonais, mémoire de guerre et d’amour.</p>
+    <p>Montage de voix, anamnèse et oublis — écriture blanche.</p>
+  `,
+  interpretation: `
+    <p>Sarah Kofman lit une éthique de l’indicible. Roland Barthes voit une écriture du neutre, d’une sensibilité sans emphase.</p>
+  `
+},
+{
+  title: "Moderato cantabile",
+  author: "Marguerite Duras",
+  year: 1958,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Rituel de la leçon de piano, meurtre au café, désir oblique. Style minimal, variations musicales.</p>
+    <p>Le non-dit structure la relation et le suspense.</p>
+  `,
+  interpretation: `
+    <p>Blanchot lit le neutre durassien comme espace de retrait. Hélène Cixous souligne la féminité d’une syntaxe du manque.</p>
+  `
+},
+{
+  title: "L’Amant",
+  author: "Marguerite Duras",
+  year: 1984,
+  era: "XXe tardif & Oulipo",
+  form: "Roman",
+  resume: `
+    <p>Souvenir d’Indochine : adolescente pauvre et amant chinois. Prix Goncourt 1984. Écriture fragmentaire, autobiographie romancée.</p>
+    <p>Temps circulaire, sensorialité et économie coloniale entremêlés.</p>
+  `,
+  interpretation: `
+    <p>Julia Kristeva voit une mise en scène du sujet éclaté. Françoise Lionnet lit les rapports de race, classe, genre dans une poétique de la mémoire.</p>
+  `
+},
+
 
 
 {
